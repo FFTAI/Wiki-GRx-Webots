@@ -1,0 +1,19 @@
+# notice : to refresh the git cache, do the following command in 'Git Bash'
+# git rm -r --cached .
+# git add .
+
+# folder
+/build/
+/log/
+/*.egg-info/
+
+# 根目录 ---------------------------------------
+
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+.DS_Store
+
+/robot_rcs_gr.egg-info/
+
+# 根目录 ---------------------------------------
