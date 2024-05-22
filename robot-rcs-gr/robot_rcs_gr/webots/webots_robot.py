@@ -1,16 +1,6 @@
-import os
-import pygame
-import math
 import numpy
-import torch
-from enum import Enum
-import matplotlib.pyplot as plt
 
-from controller import InertialUnit
-from controller import Robot
-from controller import Keyboard
 from controller import Supervisor
-from controller import Node
 
 
 class WebotsRobot:
@@ -81,6 +71,15 @@ class WebotsRobot:
         self.joint_pd_control_max = numpy.array([])
         self.joint_pd_control_min = numpy.array([])
 
+        self.flag_joint_pd_torque_control = [
+            False, False, False, False, False,  # left leg (5), no ankle roll
+            False, False, False, False, False,  # right leg (5), no ankle roll
+        ]
+        self.flag_joint_position_control = [
+            True, True, True, True, True,  # left leg (5), no ankle roll
+            True, True, True, True, True,  # right leg (5), no ankle roll
+        ]
+
     def prepare(self):
         self.webots_robot_intf = Supervisor()
 
@@ -128,7 +127,6 @@ class WebotsRobot:
         self.joint_measured_position_value = numpy.zeros(self.num_of_joints)
         self.joint_measured_position_value_last = numpy.zeros(self.num_of_joints)
         self.joint_measured_velocity_value = numpy.zeros(self.num_of_joints)
-        self.joint_measured_velocity_value_last = numpy.zeros(self.num_of_joints)
         self.joint_measured_force_value = numpy.zeros(self.num_of_joints)
         self.joint_measured_torque_value = numpy.zeros(self.num_of_joints)
         self.joint_position_sensors_value = numpy.zeros(self.num_of_joint_position_sensors)
@@ -165,7 +163,7 @@ class WebotsRobot:
         # 读取传感器数据
         imu_base_ang_value_in_quat = self.imus[0].getQuaternion()
 
-        self.imu_measured_quat_to_world = imu_base_ang_value_in_quat
+        self.imu_measured_quat_to_world = numpy.array(imu_base_ang_value_in_quat)
 
         gyro_base_ang_vel_value = self.gyros[0].getValues()
 
@@ -185,7 +183,6 @@ class WebotsRobot:
         self.joint_measured_position_value = numpy.array(self.joint_position_sensors_value)
 
         # 计算关节速度
-        self.joint_measured_velocity_value_last = numpy.array(self.joint_measured_velocity_value)
         self.joint_measured_velocity_value = \
             (self.joint_measured_position_value - self.joint_measured_position_value_last) / (self.sim_dt * 0.001)
 
@@ -207,4 +204,8 @@ class WebotsRobot:
 
         # output
         for i in range(self.num_of_joints):
-            self.joints[i].setTorque(self.joint_pd_control_output[i])
+            if self.flag_joint_pd_torque_control[i] is True:
+                self.joints[i].setTorque(self.joint_pd_control_output[i])
+
+            if self.flag_joint_position_control[i] is True:
+                self.joints[i].setPosition(self.joint_pd_control_target[i])

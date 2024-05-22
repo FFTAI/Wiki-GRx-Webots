@@ -2,12 +2,6 @@ import os
 import numpy
 import torch
 
-from controller import InertialUnit
-from controller import Robot
-from controller import Keyboard
-from controller import Supervisor
-from controller import Node
-
 from robot_rcs_gr.rl.rl_actor_critic_mlp import ActorCriticMLP
 from robot_rcs_gr.webots.webots_robot import WebotsRobot
 
@@ -135,7 +129,7 @@ class WebotsGR1Simple(WebotsRobot):
         except Exception as e:
             print(e)
 
-        self.variable_nn_actor_output = torch.tensor([self.joint_default_position], dtype=torch.float32)
+        self.variable_nn_actor_output = torch.zeros(1, self.num_of_joints, dtype=torch.float32)
 
         # actor clip
         self.variable_nn_actor_output_clip_max = torch.tensor([
@@ -146,11 +140,28 @@ class WebotsGR1Simple(WebotsRobot):
             -0.09, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
             -0.79, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
         ])
-        self.variable_nn_actor_output_clip_max = self.variable_nn_actor_output_clip_max + 60 / 100 * torch.pi / 3
-        self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 100 * torch.pi / 3
+        self.variable_nn_actor_output_clip_max = self.variable_nn_actor_output_clip_max + 60 / 180 * torch.pi / 3
+        self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 180 * torch.pi / 3
 
     def control_loop_algorithm(self):
-        if self.decimation_count % self.decimation == 0 and self.decimation_count > 200:
+        if self.decimation_count < 500:
+            # stand control
+            self.flag_joint_pd_torque_control = [
+                False, False, False, False, False,  # left leg (5), no ankle roll
+                False, False, False, False, False,  # right leg (5), no ankle roll
+            ]
+            self.flag_joint_position_control = [
+                True, True, True, True, True,  # left leg (5), no ankle roll
+                True, True, True, True, True,  # right leg (5), no ankle roll
+            ]
+
+            self.variable_nn_actor_output = torch.tensor([self.joint_measured_position_value], dtype=torch.float32) \
+                                            - torch.tensor([self.joint_default_position], dtype=torch.float32)
+            self.joint_pd_control_target = self.joint_default_position
+
+        elif self.decimation_count >= 500 \
+                and self.decimation_count % self.decimation == 0:
+            # rl_walk control
             torch_commands = torch.tensor([[0, 0, 0]], dtype=torch.float32)
             torch_base_measured_quat_to_world = torch.tensor([self.imu_measured_quat_to_world], dtype=torch.float32)
             torch_base_measured_rpy_vel_to_world = torch.tensor([self.gyro_measured_rpy_vel_to_self], dtype=torch.float32)
@@ -174,7 +185,7 @@ class WebotsGR1Simple(WebotsRobot):
                 actor_input_command,
                 actor_input_offset_joint_position,
                 actor_input_measured_joint_velocity,
-                actor_input_action,), dim=1)
+                actor_input_action), dim=1)
 
             # actor output
             variable_nn_actor_output_tensor = \
@@ -187,15 +198,27 @@ class WebotsGR1Simple(WebotsRobot):
                            min=self.variable_nn_actor_output_clip_min,
                            max=self.variable_nn_actor_output_clip_max)
 
-            variable_nn_actor_output_clip = variable_nn_actor_output_clip \
-                                            + default_joint_position_tensor
-
             # store nn output
             self.variable_nn_actor_output = \
                 variable_nn_actor_output_clip.clone()
 
+            variable_nn_actor_output_pd_target = self.variable_nn_actor_output \
+                                                 + default_joint_position_tensor
+
             # set to pd control target
-            self.joint_pd_control_target = variable_nn_actor_output_clip.numpy()[0]
+            self.flag_joint_pd_torque_control = [
+                True, True, True, True, True,  # left leg (5), no ankle roll
+                True, True, True, True, True,  # right leg (5), no ankle roll
+            ]
+            self.flag_joint_position_control = [
+                False, False, False, False, False,  # left leg (5), no ankle roll
+                False, False, False, False, False,  # right leg (5), no ankle roll
+            ]
+
+            self.joint_pd_control_target = variable_nn_actor_output_pd_target.numpy()[0]
+
+        else:
+            pass
 
         # update count
         self.decimation_count += 1

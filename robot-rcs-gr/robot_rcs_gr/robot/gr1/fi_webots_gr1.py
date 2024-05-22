@@ -1,11 +1,5 @@
 import numpy
 
-from controller import InertialUnit
-from controller import Robot
-from controller import Keyboard
-from controller import Supervisor
-from controller import Node
-
 from robot_rcs_gr.webots.webots_robot import WebotsRobot
 
 

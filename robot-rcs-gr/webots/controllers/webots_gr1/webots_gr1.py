@@ -1,10 +1,10 @@
-from robot_rcs_gr.robot.gr1.fi_robot_gr1_webots import GR1Webots
+from robot_rcs_gr.robot.gr1.fi_webots_gr1 import WebotsGR1
 
 print("WebotsGR1 controller is ready to work.")
 
 sim_dt = 1  # ms
 
-webots_robot = GR1Webots(sim_dt=sim_dt)
+webots_robot = WebotsGR1(sim_dt=sim_dt)
 webots_robot.prepare()
 webots_robot.enable()
 
