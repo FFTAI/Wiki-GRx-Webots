@@ -1,13 +1,14 @@
 import os
 import numpy
 import torch
-from enum import Enum
 
 from controller import InertialUnit
 from controller import Robot
 from controller import Keyboard
 from controller import Supervisor
 from controller import Node
+
+from robot_rcs_gr.robot.webots.webots_robot import WebotsRobot
 
 
 class WebotsGR1Simple(WebotsRobot):

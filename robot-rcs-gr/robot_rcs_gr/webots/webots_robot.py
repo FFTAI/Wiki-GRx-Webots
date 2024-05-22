@@ -60,7 +60,6 @@ class WebotsRobot:
         self.base_measured_quat_to_world = None
         self.base_measured_xyz_vel_to_world = None
         self.base_measured_rpy_vel_to_world = None
-        self.base_measured_rm_to_world = None
 
         self.base_measured_xyz_vel_to_self = None
         self.base_measured_rpy_vel_to_self = None
@@ -68,28 +67,10 @@ class WebotsRobot:
         self.imu_measured_quat_to_world = None
         self.gyro_measured_rpy_vel_to_self = None
 
-        self.joint_measured_position_value_last = None
         self.joint_measured_position_value = None
-        self.joint_measured_velocity_value_last = None
         self.joint_measured_velocity_value = None
 
         self.joint_position_sensor_value = None
-
-        # avg
-        self.base_measured_quat_to_world_buffer_length = 10
-        self.base_measured_quat_to_world_buffer = []
-        self.base_measured_quat_to_world_avg = numpy.zeros(4)
-
-        self.base_measured_rpy_vel_to_self_buffer_length = 10
-        self.base_measured_rpy_vel_to_self_buffer = []
-        self.base_measured_rpy_vel_to_self_avg = numpy.zeros(3)
-
-        self.joint_measured_velocity_value_buffer_length = 10
-        self.joint_measured_velocity_value_buffer = []
-        self.joint_measured_velocity_value_avg = numpy.zeros(self.num_of_joints)
-
-        # algorithm models
-        self.task_algorithm_model = None
 
         # sim
         self.joint_pd_control_target_to_sim = None
@@ -183,28 +164,11 @@ class WebotsRobot:
 
     def control_loop_update_robot_state(self):
 
-        # legged gym base/imu quat samples:
-        # base 0.0 * pi : tensor([[-0.0092,  0.0154,  0.0128,  0.9998]], device='cuda:0')
-        # base 0.5 * pi : tensor([[-0.0178, -0.0027,  0.7199,  0.6939]], device='cuda:0')
-        # base 1.0 * pi : tensor([[-0.0130, -0.0503,  0.9975, -0.0481]], device='cuda:0')
-        # base -0.5 * pi : tensor([[-0.0027,  0.0178, -0.6939,  0.7199]], device='cuda:0')
-        # base -1.0 * pi : tensor([[ 0.0154,  0.0092, -0.9998,  0.0128]], device='cuda:0')
-
-        # base 1.5 * pi : tensor([[ 0.0027, -0.0178,  0.6939, -0.7199]], device='cuda:0')
-        # base -1.5 * pi : tensor([[ 0.0175, -0.0129, -0.7088, -0.7051]], device='cuda:0')
-
-        # Jason 2024-04-24:
-        # Webots IMU will change quat value when the robot rotate 240 degree
-        # Webots IMU will change rpy value -> quat value when the robot rotate 180 degree
-        # Webots Supervisor will change rpy value when the robot rotate 180 degree
-
         # 读取 robot 位置
         self.base_measured_xyz_to_world = numpy.array(self.node_base.getPosition())
         self.base_measured_rm_to_world = numpy.array(self.node_base.getOrientation())
         self.base_measured_xyz_vel_to_world = numpy.array(self.node_base.getVelocity()[0:3])
         self.base_measured_rpy_vel_to_world = numpy.array(self.node_base.getVelocity()[3:6])
-
-        # print("self.base_measured_rpy_vel_to_self = ", numpy.round(self.base_measured_rpy_vel_to_self, 3))
 
         # 读取传感器数据
         imu_base_ang_value_in_rpy = self.imus[0].getRollPitchYaw()
@@ -212,23 +176,14 @@ class WebotsRobot:
 
         self.imu_measured_quat_to_world = imu_base_ang_value_in_quat
 
-        # print("imu_base_ang_value_in_rpy = ", numpy.round(imu_base_ang_value_in_rpy, 3))
-        # print("imu_base_ang_value_in_quat = ", numpy.round(imu_base_ang_value_in_quat, 3))
-        # print("imu_measured_quat_to_world = ", numpy.round(self.imu_measured_quat_to_world, 3))
-
         gyro_base_ang_vel_value = self.gyros[0].getValues()
 
         self.gyro_measured_rpy_vel_to_self = numpy.array(gyro_base_ang_vel_value)
-
-        # print("self.gyro_measured_rpy_vel_to_self = ", numpy.round(self.gyro_measured_rpy_vel_to_self, 3))
 
         # 读取电机数据
         for i in range(self.num_of_joints):
             self.joint_measured_force_value[i] = self.joints[i].getForceFeedback()
             self.joint_measured_torque_value[i] = self.joints[i].getTorqueFeedback()
-
-        # print("joint_force_value = ", numpy.round(joint_force_value, 2))
-        # print("joint_torque_value = ", numpy.round(joint_torque_value, 2))
 
         # 读取关节位置传感器数据
         for i in range(self.num_of_joint_position_sensors):
@@ -242,49 +197,6 @@ class WebotsRobot:
         self.joint_measured_velocity_value_last = numpy.array(self.joint_measured_velocity_value)
         self.joint_measured_velocity_value = \
             (self.joint_measured_position_value - self.joint_measured_position_value_last) / (self.sim_dt * 0.001)
-
-        # print("joint_position_sensors_value: \n",
-        #       numpy.round(numpy.array(joint_position_sensors_value), 2))
-
-        # 读取关节输出力矩
-        joint_torque_sensors_value = []
-
-        # 计算末端输出力和力矩
-        # calculate_end_effector_measured_kinetic(joint_position_sensors_value)
-
-        # print("end_effector_measured_pose: \n", end_effector_measured_pose)
-
-        # 读取足底接触状态
-        # for i in range(num_of_links):
-        #     link = links[i]
-        #     if link is not None:
-        #         contact_points = link.getContactPoints()
-        #         print("contact_points = ", contact_points)
-
-        # avg --------------------------------
-
-        self.base_measured_quat_to_world_buffer.append(self.base_measured_quat_to_world)
-
-        if len(self.base_measured_quat_to_world_buffer) > self.base_measured_quat_to_world_buffer_length:
-            self.base_measured_quat_to_world_buffer.pop(0)
-
-        self.base_measured_quat_to_world_avg = numpy.mean(self.base_measured_quat_to_world_buffer, axis=0)
-
-        self.base_measured_rpy_vel_to_self_buffer.append(self.base_measured_rpy_vel_to_self)
-
-        if len(self.base_measured_rpy_vel_to_self_buffer) > self.base_measured_rpy_vel_to_self_buffer_length:
-            self.base_measured_rpy_vel_to_self_buffer.pop(0)
-
-        self.base_measured_rpy_vel_to_self_avg = numpy.mean(self.base_measured_rpy_vel_to_self_buffer, axis=0)
-
-        self.joint_measured_velocity_value_buffer.append(self.joint_measured_velocity_value)
-
-        if len(self.joint_measured_velocity_value_buffer) > self.joint_measured_velocity_value_buffer_length:
-            self.joint_measured_velocity_value_buffer.pop(0)
-
-        self.joint_measured_velocity_value_avg = numpy.mean(self.joint_measured_velocity_value_buffer, axis=0)
-
-        # avg --------------------------------
 
     def control_loop_algorithm(self):
         pass
@@ -300,7 +212,6 @@ class WebotsRobot:
         self.joint_pd_control_target = self.joint_pd_control_target
 
         # PD Control
-        # pd control
         self.joint_pd_control_output = \
             self.joint_pd_control_kp * (self.joint_pd_control_target
                                         - self.joint_measured_position_value) \
