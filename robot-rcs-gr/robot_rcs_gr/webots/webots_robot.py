@@ -72,18 +72,9 @@ class WebotsRobot:
 
         self.joint_position_sensor_value = None
 
-        # sim
-        self.joint_pd_control_target_to_sim = None
-
         # pd control
         self.joint_pd_control_target = numpy.zeros(self.num_of_joints)
         self.joint_pd_control_output = numpy.zeros(self.num_of_joints)
-
-        self.joint_pd_control_target_buffer = []
-        self.joint_pd_control_target_delay = 0
-
-        for i in range(self.joint_pd_control_target_delay + 1):
-            self.joint_pd_control_target_buffer.append(numpy.zeros(self.num_of_joints))
 
         self.joint_pd_control_kp = numpy.array([])
         self.joint_pd_control_kd = numpy.array([])
@@ -142,8 +133,6 @@ class WebotsRobot:
         self.joint_measured_torque_value = numpy.zeros(self.num_of_joints)
         self.joint_position_sensors_value = numpy.zeros(self.num_of_joint_position_sensors)
 
-        print("tasks = \n", self.tasks)
-
     def enable(self):
         for joint in self.joints:
             joint.enableForceFeedback(self.sim_dt)
@@ -162,6 +151,9 @@ class WebotsRobot:
         for accelerater in self.accelerometers:
             accelerater.enable(self.sim_dt)
 
+    def before_control_loop(self):
+        pass
+
     def control_loop_update_robot_state(self):
 
         # 读取 robot 位置
@@ -171,7 +163,6 @@ class WebotsRobot:
         self.base_measured_rpy_vel_to_world = numpy.array(self.node_base.getVelocity()[3:6])
 
         # 读取传感器数据
-        imu_base_ang_value_in_rpy = self.imus[0].getRollPitchYaw()
         imu_base_ang_value_in_quat = self.imus[0].getQuaternion()
 
         self.imu_measured_quat_to_world = imu_base_ang_value_in_quat
@@ -187,7 +178,7 @@ class WebotsRobot:
 
         # 读取关节位置传感器数据
         for i in range(self.num_of_joint_position_sensors):
-            self.joint_position_sensor_value = round(self.joint_position_sensors[i].getValue(), 8)  # keep 4 value after .
+            self.joint_position_sensor_value = round(self.joint_position_sensors[i].getValue(), 8)
             self.joint_position_sensors_value[i] = self.joint_position_sensor_value
 
         self.joint_measured_position_value_last = numpy.array(self.joint_measured_position_value)  # 记录上一次的关节位置
@@ -203,14 +194,6 @@ class WebotsRobot:
 
     def control_loop_output(self):
 
-        # Jason 2024-02-27:
-        # add delay to the joint_pd_control_target
-        self.joint_pd_control_target_buffer = self.joint_pd_control_target_buffer[1:]
-        self.joint_pd_control_target_buffer.append(self.joint_pd_control_target)
-
-        # self.joint_pd_control_target = self.joint_pd_control_target_buffer[0]  # use the first element of the buffer
-        self.joint_pd_control_target = self.joint_pd_control_target
-
         # PD Control
         self.joint_pd_control_output = \
             self.joint_pd_control_kp * (self.joint_pd_control_target
@@ -224,8 +207,4 @@ class WebotsRobot:
 
         # output
         for i in range(self.num_of_joints):
-            if self.task_algorithm_model.flag_joint_pd_torque_control[i] is True:
-                self.joints[i].setTorque(self.joint_pd_control_output[i])
-
-            if self.task_algorithm_model.flag_joint_position_control[i] is True:
-                self.joints[i].setPosition(self.joint_pd_control_target[i])
+            self.joints[i].setTorque(self.joint_pd_control_output[i])

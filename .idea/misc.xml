@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.9 (gr-packtool)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (gr-packtool)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="wiki-grx-webots" project-jdk-type="Python SDK" />
 </project>

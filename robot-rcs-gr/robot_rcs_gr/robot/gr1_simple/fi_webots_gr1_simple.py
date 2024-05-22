@@ -8,7 +8,18 @@ from controller import Keyboard
 from controller import Supervisor
 from controller import Node
 
-from robot_rcs_gr.robot.webots.webots_robot import WebotsRobot
+from robot_rcs_gr.rl.rl_actor_critic_mlp import ActorCriticMLP
+from robot_rcs_gr.webots.webots_robot import WebotsRobot
+
+
+def quat_rotate_inverse(q, v):
+    shape = q.shape
+    q_w = q[:, -1]
+    q_vec = q[:, :3]
+    a = v * (2.0 * q_w ** 2 - 1.0).unsqueeze(-1)
+    b = torch.cross(q_vec, v, dim=-1) * q_w.unsqueeze(-1) * 2.0
+    c = q_vec * torch.bmm(q_vec.view(shape[0], 1, 3), v.view(shape[0], 3, 1)).squeeze(-1) * 2.0
+    return a - b + c
 
 
 class WebotsGR1Simple(WebotsRobot):
@@ -72,23 +83,21 @@ class WebotsGR1Simple(WebotsRobot):
             "accelerometer"
         ]
 
-        # pd control
-        self.joint_pd_control_target = numpy.zeros(self.num_of_joints)
-        self.joint_pd_control_output = numpy.zeros(self.num_of_joints)
-
-        self.joint_pd_control_target_buffer = []
-        self.joint_pd_control_target_delay = 0
-
-        for i in range(self.joint_pd_control_target_delay + 1):
-            self.joint_pd_control_target_buffer.append(numpy.zeros(self.num_of_joints))
+        # pd
+        self.joint_default_position = numpy.array([
+            0.0, 0.0, -0.2618, 0.5236, -0.2618,  # left leg (5)
+            0.0, 0.0, -0.2618, 0.5236, -0.2618,  # right leg (5)
+        ])
+        self.joint_pd_control_target = self.joint_default_position
+        self.joint_pd_control_output = self.joint_default_position
 
         self.joint_pd_control_kp = numpy.array([
-            251.625, 362.5214, 200.0, 200.0, 10.9885,  # left leg(5)
-            251.625, 362.5214, 200.0, 200.0, 10.9885,  # right leg(5)
+            57, 43, 114, 114, 15.3,  # left leg(5)
+            57, 43, 114, 114, 15.3,  # right leg(5)
         ])
         self.joint_pd_control_kd = numpy.array([
-            14.72, 10.0833, 11.0, 11.0, 0.5991,  # left leg(5)
-            14.72, 10.0833, 11.0, 11.0, 0.5991,  # right leg(5)
+            5.7, 4.3, 11.4, 11.4, 1.5,  # left leg(5)
+            5.7, 4.3, 11.4, 11.4, 1.5,  # right leg(5)
         ])
         self.joint_pd_control_max = numpy.array([
             60.0, 45.0, 130.0, 130.0, 16.0,  # left leg(5)
@@ -98,3 +107,93 @@ class WebotsGR1Simple(WebotsRobot):
             -60.0, -45.0, -130.0, -130.0, -16.0,  # left leg(5)
             -60.0, -45.0, -130.0, -130.0, -16.0,  # right leg(5)
         ])
+
+        # rl_walk algorithm ----------------------------------------
+        self.decimation_count = 0
+        self.decimation = 20
+        # nerual network
+        try:
+            self.model_file_path = os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "model_4000.pt"
+            )
+            # print("model_file_path: ", self.model_file_path)
+
+            model = torch.load(self.model_file_path, map_location=torch.device("cpu"))
+            model_actor_dict = model["model_state_dict"]
+
+            self.variable_nn_actor = \
+                ActorCriticMLP(num_actor_obs=39,
+                               num_critic_obs=168,
+                               num_actions=self.num_of_joints,
+                               actor_hidden_dims=[512, 256, 128],
+                               critic_hidden_dims=[512, 256, 128])
+
+            self.variable_nn_actor.load_state_dict(model_actor_dict)
+
+        except Exception as e:
+            print(e)
+
+        self.variable_nn_actor_output = torch.tensor([self.joint_default_position], dtype=torch.float32)
+
+        # actor clip
+        self.variable_nn_actor_output_clip_max = torch.tensor([
+            0.79, 0.7, 0.7, 1.92, 0.52,  # left leg (5), no ankle roll
+            0.09, 0.7, 0.7, 1.92, 0.52,  # left leg (5), no ankle roll
+        ])
+        self.variable_nn_actor_output_clip_min = torch.tensor([
+            -0.09, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
+            -0.79, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
+        ])
+        self.variable_nn_actor_output_clip_max = self.variable_nn_actor_output_clip_max + 60 / 100 * torch.pi / 3
+        self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 100 * torch.pi / 3
+
+    def control_loop_algorithm(self):
+        if self.decimation_count % self.decimation == 0 and self.decimation_count > 200:
+            torch_commands = torch.tensor([[0, 0, 0]], dtype=torch.float32)
+            torch_base_measured_quat_to_world = torch.tensor([self.imu_measured_quat_to_world], dtype=torch.float32)
+            torch_base_measured_rpy_vel_to_world = torch.tensor([self.gyro_measured_rpy_vel_to_self], dtype=torch.float32)
+            torch_joint_measured_position_value = torch.tensor([self.joint_measured_position_value], dtype=torch.float32)
+            torch_joint_measured_velocity_value = torch.tensor([self.joint_measured_velocity_value], dtype=torch.float32)
+
+            default_joint_position_tensor = torch.tensor([self.joint_default_position], dtype=torch.float32)
+            gravity_vector = torch.tensor([[0.0, 0.0, -1.0]], dtype=torch.float32)
+
+            # input
+            actor_input_base_angular_velocity = torch_base_measured_rpy_vel_to_world
+            actor_input_base_projected_gravity = quat_rotate_inverse(torch_base_measured_quat_to_world, gravity_vector)
+            actor_input_offset_joint_position = torch_joint_measured_position_value - default_joint_position_tensor
+            actor_input_measured_joint_velocity = torch_joint_measured_velocity_value
+            actor_input_action = self.variable_nn_actor_output
+
+            variable_nn_actor_input = torch.cat((
+                actor_input_base_angular_velocity,
+                actor_input_base_projected_gravity,
+                torch_commands,
+                actor_input_offset_joint_position,
+                actor_input_measured_joint_velocity,
+                actor_input_action,), dim=1)
+
+            # actor output
+            variable_nn_actor_output_tensor = \
+                self.variable_nn_actor(variable_nn_actor_input)
+
+            variable_nn_actor_output_raw = \
+                variable_nn_actor_output_tensor.detach()
+            variable_nn_actor_output_clip = \
+                torch.clip(variable_nn_actor_output_raw,
+                           min=self.variable_nn_actor_output_clip_min,
+                           max=self.variable_nn_actor_output_clip_max)
+
+            variable_nn_actor_output_clip = variable_nn_actor_output_clip \
+                                            + default_joint_position_tensor
+
+            # store nn output
+            self.variable_nn_actor_output = \
+                variable_nn_actor_output_clip.clone()
+
+            # set to pd control target
+            self.joint_pd_control_target = variable_nn_actor_output_clip.numpy()[0]
+
+        # update count
+        self.decimation_count += 1
