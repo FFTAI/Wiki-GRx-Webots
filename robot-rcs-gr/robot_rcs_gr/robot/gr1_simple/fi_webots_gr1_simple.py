@@ -108,16 +108,17 @@ class WebotsGR1Simple(WebotsRobot):
             -60.0, -45.0, -130.0, -130.0, -16.0,  # right leg(5)
         ])
 
-        # rl_walk algorithm ----------------------------------------
+        # --------------------------------------------------------------------------------
+        # rl_walk algorithm
         self.decimation_count = 0
         self.decimation = 20
+
         # nerual network
         try:
             self.model_file_path = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
                 "model_4000.pt"
             )
-            # print("model_file_path: ", self.model_file_path)
 
             model = torch.load(self.model_file_path, map_location=torch.device("cpu"))
             model_actor_dict = model["model_state_dict"]
@@ -162,6 +163,7 @@ class WebotsGR1Simple(WebotsRobot):
             # input
             actor_input_base_angular_velocity = torch_base_measured_rpy_vel_to_world
             actor_input_base_projected_gravity = quat_rotate_inverse(torch_base_measured_quat_to_world, gravity_vector)
+            actor_input_command = torch_commands
             actor_input_offset_joint_position = torch_joint_measured_position_value - default_joint_position_tensor
             actor_input_measured_joint_velocity = torch_joint_measured_velocity_value
             actor_input_action = self.variable_nn_actor_output
@@ -169,7 +171,7 @@ class WebotsGR1Simple(WebotsRobot):
             variable_nn_actor_input = torch.cat((
                 actor_input_base_angular_velocity,
                 actor_input_base_projected_gravity,
-                torch_commands,
+                actor_input_command,
                 actor_input_offset_joint_position,
                 actor_input_measured_joint_velocity,
                 actor_input_action,), dim=1)
