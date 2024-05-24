@@ -1,6 +1,9 @@
 # Wiki-GRx-Webots
 
-![](./pictures/gr1t1_webots.png)![](./pictures/gr1t2_webots.png)
+<img src="./pictures/gr1t1_webots.png" width="300" height="360" />
+<img src="./pictures/gr1t2_webots.png" width="300" height="360" />
+
+[//]: # (![]&#40;./pictures/gr1t1_webots.png&#41;![]&#40;./pictures/gr1t2_webots.png&#41;)
 
 This repository provides an environment used to test the RL policy trained in NVIDIA's Isaac Gym on the GRx robot model in Webots.
 
