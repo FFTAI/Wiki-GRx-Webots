@@ -32,8 +32,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.22221496140248082 -0.4152613770244267 -0.8821442623974103 5.328322383563721
-  position -2.314349765097602 -8.481360374762506 2.5416400466299325
+  orientation 0.13609406266866322 -0.03163000784591887 -0.9901908647882008 3.5051082286476687
+  position 3.7733420248989913 -7.3230953245365775 2.1661135418145
 }
 Background {
   skyColor [
@@ -1068,7 +1068,7 @@ DEF GR1 Robot {
                         ]
                         endPoint Solid {
                           translation 0 0.12661 0.21727
-                          rotation 0.9999999999998966 4.438415047896448e-07 9.841325369057962e-08 0.4363999999999966
+                          rotation 0.9999999999998954 4.4664785379946695e-07 9.903550720723178e-08 0.4363999999999966
                           children [
                             Shape {
                               appearance DEF l_upper_arm_pitch_material PBRAppearance {
@@ -1101,7 +1101,7 @@ DEF GR1 Robot {
                               ]
                               endPoint Solid {
                                 translation 0 0.067 0
-                                rotation -1 4.7352764679545896e-14 2.2389109227697482e-13 0.4364000081995723
+                                rotation -1 4.735276467954604e-14 2.2389109227697532e-13 0.4364000081995723
                                 children [
                                   Shape {
                                     appearance DEF l_upper_arm_roll_material PBRAppearance {
@@ -1437,7 +1437,7 @@ DEF GR1 Robot {
                         ]
                         endPoint Solid {
                           translation 0 -0.12664 0.21725
-                          rotation -0.9999999999999759 2.1453114252557504e-07 -4.75534515791853e-08 0.43626999999999205
+                          rotation -0.9999999999999759 2.145311425255751e-07 -4.75534515791853e-08 0.43626999999999205
                           children [
                             Shape {
                               appearance DEF r_upper_arm_pitch_material PBRAppearance {
@@ -1470,7 +1470,7 @@ DEF GR1 Robot {
                               ]
                               endPoint Solid {
                                 translation 0 -0.067 0
-                                rotation 1 2.269620122023518e-14 -1.0727655038765274e-13 0.4362700039276731
+                                rotation 1 2.2696201220235244e-14 -1.0727655038765289e-13 0.4362700039276731
                                 children [
                                   Shape {
                                     appearance DEF r_upper_arm_roll_material PBRAppearance {
@@ -1864,7 +1864,7 @@ DEF GR1 Robot {
       1.726078e-05 -7.021831e-05 -3.163851e-06
     ]
   }
-  controller "gr1t1_nowhla_webots"
+  controller "webots_gr1t1"
   supervisor TRUE
 }
 DEF stairs Solid {
