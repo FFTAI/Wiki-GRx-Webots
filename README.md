@@ -41,6 +41,24 @@ This repository provides an environment used to test the RL policy trained in NV
 
 The robot will be loaded and start walking in the simulation environment.
 
+### Model Conversion
+
+The URDF file can not be used directly in Webots. You need to convert the URDF file to a PROTO file.
+
+- https://github.com/cyberbotics/urdf2webots
+
+The following steps show how to convert the URDF file to a PROTO file:
+
+1. Install the `urdf2webots` tool:
+    ```
+   pip install urdf2webots
+   ```
+
+2. Convert the URDF file to a PROTO file:
+    ```
+   python -m urdf2webots.importer --input=grx.urdf --output=grx.proto
+   ```
+
 ---
 
 Thank you for your interest in the Fourier Intelligence GRx Robot Model Repository.
