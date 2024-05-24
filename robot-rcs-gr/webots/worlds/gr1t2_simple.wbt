@@ -1,0 +1,1784 @@
+#VRML_SIM R2023b utf8
+
+WorldInfo {
+  CFM 1e-07
+  ERP 0.8
+  basicTimeStep 1
+  contactProperties [
+    ContactProperties {
+      material1 "robot_material"
+      material2 "robot_material"
+      coulombFriction [
+        0.7
+      ]
+      bounce 0.8
+      bounceVelocity 0.003
+      softERP 0.42
+      softCFM 0.000208
+    }
+    ContactProperties {
+      material1 "f"
+      material2 "r"
+      coulombFriction [
+        0.7
+      ]
+      bounce 0.8
+      bounceVelocity 0.003
+      softERP 0.42
+      softCFM 0.000208
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.12664249797960841 -0.06320414894094142 -0.9899327821938902 3.897745265057644
+  position 1.8720957168166665 -2.111702817267982 1.730704182742837
+}
+Background {
+  skyColor [
+    0.3 0.5 0.9
+  ]
+  backUrl [
+    "../background/129072673_back.jpg"
+  ]
+  bottomUrl [
+    "../background/129072673_bottom.jpg"
+  ]
+  frontUrl [
+    "../background/129072673_front.jpg"
+  ]
+  leftUrl [
+    "../background/129072673_left.jpg"
+  ]
+  rightUrl [
+    "../background/129072673_right.jpg"
+  ]
+  topUrl [
+    "../background/129072673_top.jpg"
+  ]
+}
+DirectionalLight {
+  direction -1 0 -1
+  intensity 3
+}
+Solid {
+  boundingObject Shape {
+    appearance PBRAppearance {
+    }
+    geometry Plane {
+      size 10 10
+    }
+  }
+}
+DEF stairs Solid {
+  translation 0.999802 0.22 -4.09532e-07
+  rotation 0.5770438952777949 0.5775028951944954 0.5775038951943139 2.09485
+  children [
+    DEF Test_5 Solid {
+      translation 0 0.63 1.39
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(5)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _4 Solid {
+      translation 0 0.51 1.11
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _3 Solid {
+      translation 0 0.39 0.83
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject DEF stairs_4 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _2 Solid {
+      translation 0 0.27 0.554
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(2)"
+      boundingObject DEF stair_3 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _1 Solid {
+      translation 0 0.16 0.274
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject DEF stairs_1 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _ Solid {
+      translation 0 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.1 0.28
+          }
+        }
+      ]
+      boundingObject DEF stair_0 Box {
+        size 1.6 0.1 0.28
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Group {
+  }
+}
+DEF stairs Solid {
+  translation 1.00116 -1.38 2.57021e-06
+  rotation 0.5770438952777949 0.5775028951944954 0.5775038951943139 2.09485
+  children [
+    DEF Test_5 Solid {
+      translation 0 0.63 1.39
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(5)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _4 Solid {
+      translation 0 0.51 1.11
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _3 Solid {
+      translation 0 0.39 0.83
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject DEF stairs_4 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _2 Solid {
+      translation 0 0.27 0.554
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(2)"
+      boundingObject DEF stair_3 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _1 Solid {
+      translation 0 0.16 0.274
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject DEF stairs_1 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _ Solid {
+      translation 0 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.1 0.28
+          }
+        }
+      ]
+      boundingObject DEF stair_0 Box {
+        size 1.6 0.1 0.28
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Group {
+  }
+}
+DEF stairs Solid {
+  translation 1.00261 -2.94 5.47537e-06
+  rotation 0.5770438952777949 0.5775028951944954 0.5775038951943139 2.09485
+  children [
+    DEF Test_5 Solid {
+      translation 0 0.63 1.39
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(5)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _4 Solid {
+      translation 0 0.51 1.11
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject DEF stairs_5 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _3 Solid {
+      translation 0 0.39 0.83
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject DEF stairs_4 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _2 Solid {
+      translation 0 0.27 0.554
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(2)"
+      boundingObject DEF stair_3 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _1 Solid {
+      translation 0 0.16 0.274
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.12 0.28
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject DEF stairs_1 Box {
+        size 1.6 0.12 0.28
+      }
+    }
+    DEF _ Solid {
+      translation 0 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.0168002 0.198352 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 1.6 0.1 0.28
+          }
+        }
+      ]
+      boundingObject DEF stair_0 Box {
+        size 1.6 0.1 0.28
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject Group {
+  }
+}
+DEF GR1T2Simple Robot {
+  translation -0.7 0 0.93
+  children [
+    Solid {
+      translation -0.0648 0 -0.1015
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0 0
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+        Accelerometer {
+        }
+        Gyro {
+        }
+        InertialUnit {
+        }
+      ]
+      name "imu_link"
+      physics Physics {
+      }
+    }
+    Shape {
+      appearance DEF base_material PBRAppearance {
+        baseColor 0.75294 0.75294 0.75294
+        roughness 1
+        metalness 0
+      }
+      geometry DEF base Mesh {
+        url [
+          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/base.STL"
+        ]
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.048 0.105 -0.0575
+      }
+      device [
+        RotationalMotor {
+          name "l_hip_roll"
+          maxVelocity 12.15
+          minPosition -0.09
+          maxPosition 0.79
+          maxTorque 48
+        }
+        PositionSensor {
+          name "l_hip_roll_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.048 0.105 -0.0575
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF l_thigh_roll_material PBRAppearance {
+              baseColor 0.75294 0.75294 0.75294
+              roughness 1
+              metalness 0
+            }
+            geometry DEF Lleg1 Mesh {
+              url [
+                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg1.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.048 0 -0.0305
+            }
+            device [
+              RotationalMotor {
+                name "l_hip_yaw"
+                maxVelocity 16.76
+                minPosition -0.7
+                maxPosition 0.7
+                maxTorque 66
+              }
+              PositionSensor {
+                name "l_hip_yaw_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.048 0 -0.0305
+              children [
+                Shape {
+                  appearance DEF l_thigh_yaw_material PBRAppearance {
+                    baseColor 0.75294 0.75294 0.75294
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF Lleg2 Mesh {
+                    url [
+                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg2.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -0.2618
+                    axis 0 1 0
+                    anchor 0 0 -0.11
+                  }
+                  device [
+                    RotationalMotor {
+                      name "l_hip_pitch"
+                      maxVelocity 37.38
+                      minPosition -1.75
+                      maxPosition 0.7
+                      maxTorque 225
+                    }
+                    PositionSensor {
+                      name "l_hip_pitch_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.11
+                    rotation 0 -1 0 0.26180000000000075
+                    children [
+                      Shape {
+                        appearance DEF l_thigh_pitch_material PBRAppearance {
+                          baseColor 0.75294 0.75294 0.75294
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF Lleg3 Mesh {
+                          url [
+                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg3.STL"
+                          ]
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 0.5236
+                          axis 0 1 0
+                          anchor 0 2.5e-05 -0.36
+                          minStop -0.09
+                          maxStop 1.92
+                        }
+                        device [
+                          RotationalMotor {
+                            name "l_knee_pitch"
+                            maxVelocity 37.38
+                            minPosition -0.09
+                            maxPosition 1.92
+                            maxTorque 225
+                          }
+                          PositionSensor {
+                            name "l_knee_pitch_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 2.5000053017996117e-06 0 -0.3599956698760421
+                          rotation 0 1 0 0.5236
+                          children [
+                            Shape {
+                              appearance DEF l_shank_pitch_material PBRAppearance {
+                                baseColor 0.75294 0.75294 0.75294
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF Lleg4 Mesh {
+                                url [
+                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg4.STL"
+                                ]
+                              }
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                position -0.2618
+                                axis 0 1 0
+                                anchor 0 0 -0.34
+                                minStop -1.05
+                                maxStop 0.52
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "l_ankle_pitch"
+                                  maxVelocity 20.32
+                                  minPosition -1.05
+                                  maxPosition 0.52
+                                  maxTorque 15
+                                }
+                                PositionSensor {
+                                  name "l_ankle_pitch_sensor"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 0 -0.34
+                                rotation 0 -1 0 0.26180000000000075
+                                children [
+                                  Shape {
+                                    appearance DEF l_foot_pitch_material PBRAppearance {
+                                      baseColor 0.75294 0.75294 0.75294
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry DEF Lleg5 Mesh {
+                                      url [
+                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg5.STL"
+                                      ]
+                                    }
+                                  }
+                                  Solid {
+                                    children [
+                                      Shape {
+                                        appearance DEF l_foot_roll_material PBRAppearance {
+                                          baseColor 0.75294 0.75294 0.75294
+                                          roughness 1
+                                          metalness 0
+                                        }
+                                        geometry DEF Lleg6 Mesh {
+                                          url [
+                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg6.STL"
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                    name "l_foot_roll"
+                                    boundingObject Group {
+                                      children [
+                                        Pose {
+                                          translation 0.05 0.02 -0.035
+                                          rotation 0 1 0 1.5708
+                                          children [
+                                            Cylinder {
+                                              height 0.24
+                                              radius 0.02
+                                            }
+                                          ]
+                                        }
+                                        Pose {
+                                          translation 0.05 -0.02 -0.035
+                                          rotation 0 1 0 1.5708
+                                          children [
+                                            Cylinder {
+                                              height 0.24
+                                              radius 0.02
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                    physics Physics {
+                                      density -1
+                                      mass 0.591221
+                                      centerOfMass [
+                                        0.035077 0.000269 -0.036774
+                                      ]
+                                      inertiaMatrix [
+                                        0.00039846 0.00258496 0.00281514
+                                        2.9e-07 0.00013398 0
+                                      ]
+                                    }
+                                  }
+                                ]
+                                name "l_foot_pitch"
+                                physics Physics {
+                                  density -1
+                                  mass 0.049737
+                                  centerOfMass [
+                                    0 0 0
+                                  ]
+                                  inertiaMatrix [
+                                    5.2e-06 3.71e-06 4.41e-06
+                                    0 0 0
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                          name "l_shank_pitch"
+                          boundingObject Pose {
+                            translation 0 0 -0.15
+                            children [
+                              Cylinder {
+                                height 0.2
+                                radius 0.05
+                              }
+                            ]
+                          }
+                          physics Physics {
+                            density -1
+                            mass 2.4196
+                            centerOfMass [
+                              0.00265 0.00585 -0.12267
+                            ]
+                            inertiaMatrix [
+                              0.02094885 0.02117876 0.00160342
+                              -1.793e-05 -0.00036658 0.00034981
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "l_thigh_pitch"
+                    boundingObject Pose {
+                      translation 0 0 -0.15
+                      children [
+                        Cylinder {
+                          height 0.35
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 6.1575
+                      centerOfMass [
+                        0.002329 -0.018978 -0.09346
+                      ]
+                      inertiaMatrix [
+                        0.08138824 0.08464794 0.01559965
+                        -0.00020343 0.00179871 0.00989289
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "l_thigh_yaw"
+              physics Physics {
+                density -1
+                mass 3.9947
+                centerOfMass [
+                  -0.00037 0.048008 -0.10263
+                ]
+                inertiaMatrix [
+                  0.00974309 0.01400783 0.00730946
+                  -5.137e-05 0.00011781 0.00112062
+                ]
+              }
+            }
+          }
+        ]
+        name "l_thigh_roll"
+        physics Physics {
+          density -1
+          mass 1.240836
+          centerOfMass [
+            0.042108 5.3e-05 0.002556
+          ]
+          inertiaMatrix [
+            0.00098092 0.00109617 0.001388
+            2e-08 6.191e-05 1.42e-06
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.048 -0.105 -0.0575
+      }
+      device [
+        RotationalMotor {
+          name "r_hip_roll"
+          maxVelocity 12.15
+          minPosition -0.79
+          maxPosition 0.09
+          maxTorque 48
+        }
+        PositionSensor {
+          name "r_hip_roll_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.048 -0.105 -0.0575
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF r_thigh_roll_material PBRAppearance {
+              baseColor 0.75294 0.75294 0.75294
+              roughness 1
+              metalness 0
+            }
+            geometry DEF Rleg1 Mesh {
+              url [
+                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg1.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.048 0 -0.0305
+            }
+            device [
+              RotationalMotor {
+                name "r_hip_yaw"
+                maxVelocity 16.76
+                minPosition -0.7
+                maxPosition 0.7
+                maxTorque 66
+              }
+              PositionSensor {
+                name "r_hip_yaw_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.048 0 -0.0305
+              children [
+                Shape {
+                  appearance DEF r_thigh_yaw_material PBRAppearance {
+                    baseColor 0.75294 0.75294 0.75294
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF Rleg2 Mesh {
+                    url [
+                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg2.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -0.2618
+                    axis 0 1 0
+                    anchor 0 0 -0.11
+                  }
+                  device [
+                    RotationalMotor {
+                      name "r_hip_pitch"
+                      maxVelocity 37.38
+                      minPosition -1.75
+                      maxPosition 0.7
+                      maxTorque 225
+                    }
+                    PositionSensor {
+                      name "r_hip_pitch_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.11
+                    rotation 0 -1 0 0.26180000000000075
+                    children [
+                      Shape {
+                        appearance DEF r_thigh_pitch_material PBRAppearance {
+                          baseColor 0.75294 0.75294 0.75294
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF Rleg3 Mesh {
+                          url [
+                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg3.STL"
+                          ]
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 0.5236
+                          axis 0 1 0
+                          anchor 0 2.5e-05 -0.36
+                          minStop -0.09
+                          maxStop 1.92
+                        }
+                        device [
+                          RotationalMotor {
+                            name "r_knee_pitch"
+                            maxVelocity 37.38
+                            minPosition -0.09
+                            maxPosition 1.92
+                            maxTorque 225
+                          }
+                          PositionSensor {
+                            name "r_knee_pitch_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 2.5000053017996117e-06 0 -0.3599956698760421
+                          rotation 0 1 0 0.5236
+                          children [
+                            Shape {
+                              appearance DEF r_shank_pitch_material PBRAppearance {
+                                baseColor 0.75294 0.75294 0.75294
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF Rleg4 Mesh {
+                                url [
+                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg4.STL"
+                                ]
+                              }
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                position -0.2618
+                                axis 0 1 0
+                                anchor 0 0 -0.34
+                                minStop -1.05
+                                maxStop 0.52
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "r_ankle_pitch"
+                                  maxVelocity 20.32
+                                  minPosition -1.05
+                                  maxPosition 0.52
+                                  maxTorque 15
+                                }
+                                PositionSensor {
+                                  name "r_ankle_pitch_sensor"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0 0 -0.34
+                                rotation 0 -1 0 0.26180000000000075
+                                children [
+                                  Shape {
+                                    appearance DEF r_foot_pitch_material PBRAppearance {
+                                      baseColor 0.75294 0.75294 0.75294
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry DEF Rleg5 Mesh {
+                                      url [
+                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg5.STL"
+                                      ]
+                                    }
+                                  }
+                                  Solid {
+                                    children [
+                                      Shape {
+                                        appearance DEF r_foot_roll_material PBRAppearance {
+                                          baseColor 0.75294 0.75294 0.75294
+                                          roughness 1
+                                          metalness 0
+                                        }
+                                        geometry DEF Rleg6 Mesh {
+                                          url [
+                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg6.STL"
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                    name "r_foot_roll"
+                                    boundingObject Group {
+                                      children [
+                                        Pose {
+                                          translation 0.05 0.02 -0.035
+                                          rotation 0 1 0 1.5708
+                                          children [
+                                            Cylinder {
+                                              height 0.24
+                                              radius 0.02
+                                            }
+                                          ]
+                                        }
+                                        Pose {
+                                          translation 0.05 -0.02 -0.035
+                                          rotation 0 1 0 1.5708
+                                          children [
+                                            Cylinder {
+                                              height 0.24
+                                              radius 0.02
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                    physics Physics {
+                                      density -1
+                                      mass 0.59122
+                                      centerOfMass [
+                                        0.035078 -0.000269 -0.036775
+                                      ]
+                                      inertiaMatrix [
+                                        0.00039843 0.00258489 0.00281503
+                                        -3.3e-07 0.00013399 0
+                                      ]
+                                    }
+                                  }
+                                ]
+                                name "r_foot_pitch"
+                                physics Physics {
+                                  density -1
+                                  mass 0.049737
+                                  centerOfMass [
+                                    0 0 0
+                                  ]
+                                  inertiaMatrix [
+                                    5.2e-06 3.71e-06 4.41e-06
+                                    0 0 0
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                          name "r_shank_pitch"
+                          boundingObject Pose {
+                            translation 0 0 -0.15
+                            children [
+                              Cylinder {
+                                height 0.2
+                                radius 0.05
+                              }
+                            ]
+                          }
+                          physics Physics {
+                            density -1
+                            mass 2.4196
+                            centerOfMass [
+                              0.002664 -0.005885 -0.12251
+                            ]
+                            inertiaMatrix [
+                              0.02088663 0.02111895 0.00160131
+                              1.78e-05 -0.00036399 -0.00036161
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "r_thigh_pitch"
+                    boundingObject Pose {
+                      translation 0 0 -0.15
+                      children [
+                        Cylinder {
+                          height 0.35
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 6.1575
+                      centerOfMass [
+                        0.002361 0.019072 -0.093254
+                      ]
+                      inertiaMatrix [
+                        0.08151107 0.08477204 0.01565212
+                        0.00019413 0.0017867 -0.00994489
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "r_thigh_yaw"
+              physics Physics {
+                density -1
+                mass 3.9947
+                centerOfMass [
+                  -0.000369 -0.048008 -0.10263
+                ]
+                inertiaMatrix [
+                  0.00974298 0.01400765 0.0073094
+                  5.139e-05 0.0001179 -0.00112065
+                ]
+              }
+            }
+          }
+        ]
+        name "r_thigh_roll"
+        physics Physics {
+          density -1
+          mass 1.2408
+          centerOfMass [
+            0.042109 -5.2e-05 0.002556
+          ]
+          inertiaMatrix [
+            0.00098097 0.00109627 0.00138804
+            -2e-08 6.189e-05 -1.43e-06
+          ]
+        }
+      }
+    }
+    Solid {
+      translation 0 0 0.0065
+      children [
+        Shape {
+          appearance DEF waist_yaw_material PBRAppearance {
+            baseColor 0.75294 0.75294 0.75294
+            roughness 1
+            metalness 0
+          }
+          geometry DEF waist3 Mesh {
+            url [
+              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist3.STL"
+            ]
+          }
+        }
+        Solid {
+          translation 0 0 0.057
+          children [
+            Shape {
+              appearance DEF waist_pitch_material PBRAppearance {
+                baseColor 0.75294 0.75294 0.75294
+                roughness 1
+                metalness 0
+              }
+              geometry DEF waist2 Mesh {
+                url [
+                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist2.STL"
+                ]
+              }
+            }
+            Solid {
+              translation 0 0 0.081
+              children [
+                Shape {
+                  appearance DEF waist_roll_material PBRAppearance {
+                    baseColor 0.75294 0.75294 0.75294
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF waist1 Mesh {
+                    url [
+                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist1.STL"
+                    ]
+                  }
+                }
+                Solid {
+                  translation 0 0 0.160213
+                  children [
+                    Shape {
+                      appearance DEF torso_material PBRAppearance {
+                        baseColor 0.75294 0.75294 0.75294
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.01 0.01 0.01
+                      }
+                    }
+                    Solid {
+                      translation 0.001 -0.000226 0.144787
+                      children [
+                        Shape {
+                          appearance DEF head_pitch_material PBRAppearance {
+                            baseColor 0.75294 0.75294 0.75294
+                            roughness 1
+                            metalness 0
+                          }
+                          geometry DEF head3 Mesh {
+                            url [
+                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head3.STL"
+                            ]
+                          }
+                        }
+                        Solid {
+                          children [
+                            Shape {
+                              appearance DEF head_roll_material PBRAppearance {
+                                baseColor 0.75294 0.75294 0.75294
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF head2 Mesh {
+                                url [
+                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head2.STL"
+                                ]
+                              }
+                            }
+                            Solid {
+                              translation 0 5.4e-05 0.036
+                              children [
+                                Shape {
+                                  appearance DEF head_yaw_material PBRAppearance {
+                                    baseColor 0.75294 0.75294 0.75294
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry DEF head1 Mesh {
+                                    url [
+                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head1.STL"
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "head_yaw"
+                              physics Physics {
+                                density -1
+                                mass 1.389835
+                                centerOfMass [
+                                  0.02323 0.000269 0.11024
+                                ]
+                                inertiaMatrix [
+                                  0.00803907 0.00988205 0.00625075
+                                  -9.9e-07 0.00082206 -1.27e-06
+                                ]
+                              }
+                            }
+                          ]
+                          name "head_roll"
+                          physics Physics {
+                            density -1
+                            mass 0.071317
+                            centerOfMass [
+                              -0.003976 2.3e-05 0.015347
+                            ]
+                            inertiaMatrix [
+                              2.863e-05 2.039e-05 2.713e-05
+                              0 -2.8e-06 0
+                            ]
+                          }
+                        }
+                      ]
+                      name "head_pitch"
+                      physics Physics {
+                        density -1
+                        mass 0.005435
+                        centerOfMass [
+                          0.000438 0 0
+                        ]
+                        inertiaMatrix [
+                          3.6e-07 7e-08 3.6e-07
+                          0 0 0
+                        ]
+                      }
+                    }
+                    Solid {
+                      translation 0 0.126624 0.059046
+                      rotation 1 0 0 0.436335
+                      children [
+                        Shape {
+                          appearance DEF l_upper_arm_pitch_material PBRAppearance {
+                            baseColor 0.75294 0.75294 0.75294
+                            roughness 1
+                            metalness 0
+                          }
+                          geometry DEF Larm1 Mesh {
+                            url [
+                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm1.STL"
+                            ]
+                          }
+                        }
+                        Solid {
+                          translation 0 0.067 0
+                          rotation -1 0 0 0.2364
+                          children [
+                            Shape {
+                              appearance DEF l_upper_arm_roll_material PBRAppearance {
+                                baseColor 0.89804 0.91765 0.92941
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF Larm2 Mesh {
+                                url [
+                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm2.STL"
+                                ]
+                              }
+                            }
+                            Solid {
+                              translation 0 0.040381 -0.057233
+                              children [
+                                Shape {
+                                  appearance DEF l_upper_arm_yaw_material PBRAppearance {
+                                    baseColor 0.75294 0.75294 0.75294
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry DEF Larm3 Mesh {
+                                    url [
+                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm3.STL"
+                                    ]
+                                  }
+                                }
+                                Solid {
+                                  translation 0 0.001255 -0.188749
+                                  rotation 0 -1 0 0.3
+                                  children [
+                                    Shape {
+                                      appearance DEF l_lower_arm_pitch_material PBRAppearance {
+                                        baseColor 0.75294 0.75294 0.75294
+                                        roughness 1
+                                        metalness 0
+                                      }
+                                      geometry DEF Larm4 Mesh {
+                                        url [
+                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm4.STL"
+                                        ]
+                                      }
+                                    }
+                                    Solid {
+                                      translation 0 0.0003 -0.040499
+                                      children [
+                                        Shape {
+                                          appearance DEF l_hand_yaw_material PBRAppearance {
+                                            baseColor 0.75294 0.75294 0.75294
+                                            roughness 1
+                                            metalness 0
+                                          }
+                                          geometry DEF Larm5 Mesh {
+                                            url [
+                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm5.STL"
+                                            ]
+                                          }
+                                        }
+                                        Solid {
+                                          translation 0 0.001337 -0.20108
+                                          children [
+                                            Shape {
+                                              appearance DEF l_hand_roll_material PBRAppearance {
+                                                baseColor 0.75294 0.75294 0.75294
+                                                roughness 1
+                                                metalness 0
+                                              }
+                                              geometry DEF Larm6 Mesh {
+                                                url [
+                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm6.STL"
+                                                ]
+                                              }
+                                            }
+                                            Solid {
+                                              children [
+                                                Shape {
+                                                  appearance DEF l_hand_pitch_material PBRAppearance {
+                                                    baseColor 0.75294 0.75294 0.75294
+                                                    roughness 1
+                                                    metalness 0
+                                                  }
+                                                  geometry DEF Larm7 Mesh {
+                                                    url [
+                                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm7.STL"
+                                                    ]
+                                                  }
+                                                }
+                                              ]
+                                              name "l_hand_pitch"
+                                              boundingObject Pose {
+                                                translation 0 0 -0.07
+                                                children [
+                                                  Sphere {
+                                                    radius 0.036
+                                                  }
+                                                ]
+                                              }
+                                              physics Physics {
+                                                density -1
+                                                mass 0.54891
+                                                centerOfMass [
+                                                  0.005888 -0.001076 -0.082238
+                                                ]
+                                                inertiaMatrix [
+                                                  0.0011317 0.0014781 0.00058665
+                                                  0.00013711 -2.516e-05 4.232e-05
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                          name "l_hand_roll"
+                                          physics Physics {
+                                            density -1
+                                            mass 0.005435
+                                            centerOfMass [
+                                              0 -0.000438 -3e-06
+                                            ]
+                                            inertiaMatrix [
+                                              7e-08 3.6e-07 3.6e-07
+                                              0 0 0
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                      name "l_hand_yaw"
+                                      boundingObject Pose {
+                                        translation 0 0 -0.08
+                                        children [
+                                          Cylinder {
+                                            height 0.17
+                                            radius 0.035
+                                          }
+                                        ]
+                                      }
+                                      physics Physics {
+                                        density -1
+                                        mass 1.2684
+                                        centerOfMass [
+                                          -0.000489 0.001392 -0.08204
+                                        ]
+                                        inertiaMatrix [
+                                          0.00419457 0.00409118 0.00084731
+                                          6.15e-06 5e-07 -1.263e-05
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  name "l_lower_arm_pitch"
+                                  physics Physics {
+                                    density -1
+                                    mass 0.059535
+                                    centerOfMass [
+                                      0 0.020584 -0.020113
+                                    ]
+                                    inertiaMatrix [
+                                      2.796e-05 2.596e-05 1.931e-05
+                                      0 0 -7.95e-06
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "l_upper_arm_yaw"
+                              boundingObject Pose {
+                                translation 0 0 -0.05
+                                children [
+                                  Cylinder {
+                                    height 0.11
+                                    radius 0.03
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 0.98085
+                                centerOfMass [
+                                  0.0001 0.001281 -0.097194
+                                ]
+                                inertiaMatrix [
+                                  0.00618618 0.00611274 0.00057714
+                                  -1.2e-07 1.28e-06 0.00019627
+                                ]
+                              }
+                            }
+                          ]
+                          name "l_upper_arm_roll"
+                          physics Physics {
+                            density -1
+                            mass 0.1786
+                            centerOfMass [
+                              0.01986 0.02608 -0.025535
+                            ]
+                            inertiaMatrix [
+                              0.000202 0.00016117 0.00017433
+                              3.959e-05 -4.406e-05 4.295e-05
+                            ]
+                          }
+                        }
+                      ]
+                      name "l_upper_arm_pitch"
+                      physics Physics {
+                        density -1
+                        mass 0.78809
+                        centerOfMass [
+                          0.005419 0.05902 0.000118
+                        ]
+                        inertiaMatrix [
+                          0.0007753 0.00049478 0.00067965
+                          -2.589e-05 3.7e-07 7.2e-06
+                        ]
+                      }
+                    }
+                    Solid {
+                      translation 0 -0.126624 0.059046
+                      rotation -1 0 0 0.436332
+                      children [
+                        Shape {
+                          appearance DEF r_upper_arm_pitch_material PBRAppearance {
+                            baseColor 0.75294 0.75294 0.75294
+                            roughness 1
+                            metalness 0
+                          }
+                          geometry DEF Rarm1 Mesh {
+                            url [
+                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm1.STL"
+                            ]
+                          }
+                        }
+                        Solid {
+                          translation 0 -0.067 0
+                          rotation 1 0 0 0.23627
+                          children [
+                            Shape {
+                              appearance DEF r_upper_arm_roll_material PBRAppearance {
+                                baseColor 0.89804 0.91765 0.92941
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF Rarm2 Mesh {
+                                url [
+                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm2.STL"
+                                ]
+                              }
+                            }
+                            Solid {
+                              translation 0 -0.04 -0.0575
+                              children [
+                                Shape {
+                                  appearance DEF r_upper_arm_yaw_material PBRAppearance {
+                                    baseColor 0.75294 0.75294 0.75294
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry DEF Rarm3 Mesh {
+                                    url [
+                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm3.STL"
+                                    ]
+                                  }
+                                }
+                                Solid {
+                                  translation 0 0 -0.18853
+                                  rotation 0 -1 0 0.3
+                                  children [
+                                    Shape {
+                                      appearance DEF r_lower_arm_pitch_material PBRAppearance {
+                                        baseColor 0.79216 0.81961 0.93333
+                                        roughness 1
+                                        metalness 0
+                                      }
+                                      geometry DEF Rarm4 Mesh {
+                                        url [
+                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm4.STL"
+                                        ]
+                                      }
+                                    }
+                                    Solid {
+                                      translation 0 -3e-05 -0.0405
+                                      children [
+                                        Shape {
+                                          appearance DEF r_hand_yaw_material PBRAppearance {
+                                            baseColor 0.75294 0.75294 0.75294
+                                            roughness 1
+                                            metalness 0
+                                          }
+                                          geometry DEF Rarm5 Mesh {
+                                            url [
+                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm5.STL"
+                                            ]
+                                          }
+                                        }
+                                        Solid {
+                                          translation 0 0 -0.201084
+                                          children [
+                                            Shape {
+                                              appearance DEF r_hand_roll_material PBRAppearance {
+                                                baseColor 0.8902 0.8902 0.91373
+                                                roughness 1
+                                                metalness 0
+                                              }
+                                              geometry DEF Rarm6 Mesh {
+                                                url [
+                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm6.STL"
+                                                ]
+                                              }
+                                            }
+                                            Solid {
+                                              children [
+                                                Shape {
+                                                  appearance DEF r_hand_pitch_material PBRAppearance {
+                                                    baseColor 0.75294 0.75294 0.75294
+                                                    roughness 1
+                                                    metalness 0
+                                                  }
+                                                  geometry DEF Rarm7 Mesh {
+                                                    url [
+                                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm7.STL"
+                                                    ]
+                                                  }
+                                                }
+                                              ]
+                                              name "r_hand_pitch"
+                                              boundingObject Pose {
+                                                translation 0 0 -0.07
+                                                children [
+                                                  Sphere {
+                                                    radius 0.036
+                                                  }
+                                                ]
+                                              }
+                                              physics Physics {
+                                                density -1
+                                                mass 0.54891
+                                                centerOfMass [
+                                                  0.005888 0.001622 -0.082229
+                                                ]
+                                                inertiaMatrix [
+                                                  0.00113168 0.00147867 0.00058614
+                                                  -0.00013694 -2.607e-05 -3.638e-05
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                          name "r_hand_roll"
+                                          physics Physics {
+                                            density -1
+                                            mass 0.005435
+                                            centerOfMass [
+                                              0 0.000438 0
+                                            ]
+                                            inertiaMatrix [
+                                              7e-08 3.6e-07 3.6e-07
+                                              0 0 0
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                      name "r_hand_yaw"
+                                      boundingObject Pose {
+                                        translation 0 0 -0.08
+                                        children [
+                                          Cylinder {
+                                            height 0.17
+                                            radius 0.035
+                                          }
+                                        ]
+                                      }
+                                      physics Physics {
+                                        density -1
+                                        mass 1.2684
+                                        centerOfMass [
+                                          0.000489 -0.000846 -0.082047
+                                        ]
+                                        inertiaMatrix [
+                                          0.00419457 0.00409087 0.00084762
+                                          6.15e-06 -4.6e-07 3.42e-05
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                  name "r_lower_arm_pitch"
+                                  physics Physics {
+                                    density -1
+                                    mass 0.059535
+                                    centerOfMass [
+                                      0 -0.020449 -0.020249
+                                    ]
+                                    inertiaMatrix [
+                                      2.796e-05 2.586e-05 1.942e-05
+                                      0 0 8e-06
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "r_upper_arm_yaw"
+                              boundingObject Pose {
+                                translation 0 0 -0.05
+                                children [
+                                  Cylinder {
+                                    height 0.11
+                                    radius 0.03
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 0.98085
+                                centerOfMass [
+                                  -0.0001 -0.000635 -0.097127
+                                ]
+                                inertiaMatrix [
+                                  0.0061732 0.00610224 0.00057482
+                                  1e-08 -1.2e-06 -0.00015934
+                                ]
+                              }
+                            }
+                          ]
+                          name "r_upper_arm_roll"
+                          physics Physics {
+                            density -1
+                            mass 0.1786
+                            centerOfMass [
+                              0.019868 -0.025881 -0.025684
+                            ]
+                            inertiaMatrix [
+                              0.00020199 0.00016173 0.00017374
+                              -3.928e-05 -4.432e-05 -4.302e-05
+                            ]
+                          }
+                        }
+                      ]
+                      name "r_upper_arm_pitch"
+                      physics Physics {
+                        density -1
+                        mass 0.78809
+                        centerOfMass [
+                          0.005419 -0.058978 0.000119
+                        ]
+                        inertiaMatrix [
+                          0.00077478 0.00049477 0.00067913
+                          2.506e-05 3.6e-07 -9.49e-06
+                        ]
+                      }
+                    }
+                  ]
+                  name "torso"
+                  physics Physics {
+                  }
+                }
+              ]
+              name "waist_roll"
+              boundingObject Pose {
+                translation 0 0 0.15
+                children [
+                  Cylinder {
+                    height 0.2
+                    radius 0.1
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 7.544693
+                centerOfMass [
+                  -0.009499 8.7e-05 0.16729
+                ]
+                inertiaMatrix [
+                  0.06293498 0.05101438 0.03853047
+                  5.308e-05 0.00175668 -3.98e-06
+                ]
+              }
+            }
+          ]
+          name "waist_pitch"
+          physics Physics {
+            density -1
+            mass 2.904215
+            centerOfMass [
+              0.004561 -0.0044 0.040369
+            ]
+            inertiaMatrix [
+              0.00845426 0.00844076 0.00329151
+              -5.355e-05 -0.00049265 -0.00047579
+            ]
+          }
+        }
+      ]
+      name "waist_yaw"
+      physics Physics {
+        density -1
+        mass 0.507438
+        centerOfMass [
+          -0.004953 -0.000906 0.0262
+        ]
+        inertiaMatrix [
+          0.00110565 0.00082433 0.00141909
+          -4.9e-07 4.837e-05 1.198e-05
+        ]
+      }
+    }
+  ]
+  name "GR1T2Simple"
+  physics Physics {
+    density -1
+    mass 4.9859
+    centerOfMass [
+      -0.048532 -0.000893 -0.032851
+    ]
+    inertiaMatrix [
+      0.045749 0.016772 0.048814
+      -0.00020848 -0.0025121 -4.364e-05
+    ]
+  }
+  controller "webots_gr1t2_simple"
+  supervisor TRUE
+}

@@ -435,7 +435,7 @@ DEF stairs Solid {
   boundingObject Group {
   }
 }
-DEF GR1Simple Robot {
+DEF GR1T1Simple Robot {
   translation -0.7057167920006494 5.911653874901996e-05 0.9283824706703829
   rotation -0.026550140363985085 -0.9983054982113122 0.05178052034999541 0.002184641589263285
   children [
@@ -471,7 +471,7 @@ DEF GR1Simple Robot {
       }
       geometry DEF base Mesh {
         url [
-          "../urdf/gr1t1/meshes/base.STL"
+          "../urdf/GR1T1/meshes/base.STL"
         ]
       }
     }
@@ -505,7 +505,7 @@ DEF GR1Simple Robot {
             }
             geometry DEF l_thigh_roll Mesh {
               url [
-                "../urdf/gr1t1/meshes/l_thigh_roll.STL"
+                "../urdf/GR1T1/meshes/l_thigh_roll.STL"
               ]
             }
           }
@@ -539,7 +539,7 @@ DEF GR1Simple Robot {
                   }
                   geometry DEF l_thigh_yaw Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/l_thigh_yaw.STL"
+                      "../urdf/GR1T1/meshes/l_thigh_yaw.STL"
                     ]
                   }
                 }
@@ -573,7 +573,7 @@ DEF GR1Simple Robot {
                         }
                         geometry DEF l_thigh_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/l_thigh_pitch.STL"
+                            "../urdf/GR1T1/meshes/l_thigh_pitch.STL"
                           ]
                         }
                       }
@@ -609,7 +609,7 @@ DEF GR1Simple Robot {
                               }
                               geometry DEF l_shank_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/l_shank_pitch.STL"
+                                  "../urdf/GR1T1/meshes/l_shank_pitch.STL"
                                 ]
                               }
                             }
@@ -645,7 +645,7 @@ DEF GR1Simple Robot {
                                     }
                                     geometry DEF l_foot_pitch Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/l_foot_pitch.STL"
+                                        "../urdf/GR1T1/meshes/l_foot_pitch.STL"
                                       ]
                                     }
                                   }
@@ -679,7 +679,7 @@ DEF GR1Simple Robot {
                                           }
                                           geometry DEF l_foot_roll Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/l_foot_roll.STL"
+                                              "../urdf/GR1T1/meshes/l_foot_roll.STL"
                                             ]
                                           }
                                         }
@@ -845,7 +845,7 @@ DEF GR1Simple Robot {
             }
             geometry DEF r_thigh_roll Mesh {
               url [
-                "../urdf/gr1t1/meshes/r_thigh_roll.STL"
+                "../urdf/GR1T1/meshes/r_thigh_roll.STL"
               ]
             }
           }
@@ -879,7 +879,7 @@ DEF GR1Simple Robot {
                   }
                   geometry DEF r_thigh_yaw Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/r_thigh_yaw.STL"
+                      "../urdf/GR1T1/meshes/r_thigh_yaw.STL"
                     ]
                   }
                 }
@@ -913,7 +913,7 @@ DEF GR1Simple Robot {
                         }
                         geometry DEF r_thigh_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/r_thigh_pitch.STL"
+                            "../urdf/GR1T1/meshes/r_thigh_pitch.STL"
                           ]
                         }
                       }
@@ -949,7 +949,7 @@ DEF GR1Simple Robot {
                               }
                               geometry DEF r_shank_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/r_shank_pitch.STL"
+                                  "../urdf/GR1T1/meshes/r_shank_pitch.STL"
                                 ]
                               }
                             }
@@ -975,7 +975,7 @@ DEF GR1Simple Robot {
                               ]
                               endPoint Solid {
                                 translation 0 2.3e-05 -0.34
-                                rotation 0 -0.999999997688 -6.799999984278399e-05 0.26476573267085124
+                                rotation 0 -0.999999997688 -6.799999984278399e-05 0.2647657326708513
                                 children [
                                   Shape {
                                     appearance DEF r_foot_pitch_material PBRAppearance {
@@ -985,7 +985,7 @@ DEF GR1Simple Robot {
                                     }
                                     geometry DEF r_foot_pitch Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/r_foot_pitch.STL"
+                                        "../urdf/GR1T1/meshes/r_foot_pitch.STL"
                                       ]
                                     }
                                   }
@@ -1019,7 +1019,7 @@ DEF GR1Simple Robot {
                                           }
                                           geometry DEF r_foot_roll Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/r_foot_roll.STL"
+                                              "../urdf/GR1T1/meshes/r_foot_roll.STL"
                                             ]
                                           }
                                         }
@@ -1166,7 +1166,7 @@ DEF GR1Simple Robot {
           }
           geometry DEF waist_yaw Mesh {
             url [
-              "../urdf/gr1t1/meshes/waist_yaw.STL"
+              "../urdf/GR1T1/meshes/waist_yaw.STL"
             ]
           }
         }
@@ -1181,7 +1181,7 @@ DEF GR1Simple Robot {
               }
               geometry DEF waist_pitch Mesh {
                 url [
-                  "../urdf/gr1t1/meshes/waist_pitch.STL"
+                  "../urdf/GR1T1/meshes/waist_pitch.STL"
                 ]
               }
             }
@@ -1196,7 +1196,7 @@ DEF GR1Simple Robot {
                   }
                   geometry DEF waist_roll Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/waist_roll.STL"
+                      "../urdf/GR1T1/meshes/waist_roll.STL"
                     ]
                   }
                 }
@@ -1211,7 +1211,7 @@ DEF GR1Simple Robot {
                       }
                       geometry DEF head_yaw Mesh {
                         url [
-                          "../urdf/gr1t1/meshes/head_yaw.STL"
+                          "../urdf/GR1T1/meshes/head_yaw.STL"
                         ]
                       }
                     }
@@ -1226,7 +1226,7 @@ DEF GR1Simple Robot {
                           }
                           geometry DEF head_roll Mesh {
                             url [
-                              "../urdf/gr1t1/meshes/head_roll.STL"
+                              "../urdf/GR1T1/meshes/head_roll.STL"
                             ]
                           }
                         }
@@ -1240,7 +1240,7 @@ DEF GR1Simple Robot {
                               }
                               geometry DEF head_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/head_pitch.STL"
+                                  "../urdf/GR1T1/meshes/head_pitch.STL"
                                 ]
                               }
                             }
@@ -1306,7 +1306,7 @@ DEF GR1Simple Robot {
                   ]
                   endPoint Solid {
                     translation 7.691880465898748e-11 0.12661000000160363 0.2172699965337197
-                    rotation 0.9999999999999997 2.974364035231369e-08 6.491598546757071e-09 0.4363999995425023
+                    rotation 0.9999999999999997 2.974364035231366e-08 6.491598546757054e-09 0.4363999995425023
                     children [
                       Shape {
                         appearance DEF l_upper_arm_pitch_material PBRAppearance {
@@ -1316,7 +1316,7 @@ DEF GR1Simple Robot {
                         }
                         geometry DEF l_upper_arm_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/l_upper_arm_pitch.STL"
+                            "../urdf/GR1T1/meshes/l_upper_arm_pitch.STL"
                           ]
                         }
                       }
@@ -1340,7 +1340,7 @@ DEF GR1Simple Robot {
                         ]
                         endPoint Solid {
                           translation 0 0.067 0
-                          rotation -0.9999999999476888 -2.116499221331848e-06 -1.0007133539542249e-05 0.23640864483694773
+                          rotation -0.9999999999476887 -2.116499221331878e-06 -1.0007133539542335e-05 0.23640864483694396
                           children [
                             Shape {
                               appearance DEF l_upper_arm_roll_material PBRAppearance {
@@ -1350,7 +1350,7 @@ DEF GR1Simple Robot {
                               }
                               geometry DEF l_upper_arm_roll Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/l_upper_arm_roll.STL"
+                                  "../urdf/GR1T1/meshes/l_upper_arm_roll.STL"
                                 ]
                               }
                             }
@@ -1384,7 +1384,7 @@ DEF GR1Simple Robot {
                                     }
                                     geometry DEF l_upper_arm_yaw Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/l_upper_arm_yaw.STL"
+                                        "../urdf/GR1T1/meshes/l_upper_arm_yaw.STL"
                                       ]
                                     }
                                   }
@@ -1418,7 +1418,7 @@ DEF GR1Simple Robot {
                                           }
                                           geometry DEF l_lower_arm_pitch Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/l_lower_arm_pitch.STL"
+                                              "../urdf/GR1T1/meshes/l_lower_arm_pitch.STL"
                                             ]
                                           }
                                         }
@@ -1433,7 +1433,7 @@ DEF GR1Simple Robot {
                                               }
                                               geometry DEF l_hand_yaw Mesh {
                                                 url [
-                                                  "../urdf/gr1t1/meshes/l_hand_yaw.STL"
+                                                  "../urdf/GR1T1/meshes/l_hand_yaw.STL"
                                                 ]
                                               }
                                             }
@@ -1448,7 +1448,7 @@ DEF GR1Simple Robot {
                                                   }
                                                   geometry DEF l_hand_roll Mesh {
                                                     url [
-                                                      "../urdf/gr1t1/meshes/l_hand_roll.STL"
+                                                      "../urdf/GR1T1/meshes/l_hand_roll.STL"
                                                     ]
                                                   }
                                                 }
@@ -1462,7 +1462,7 @@ DEF GR1Simple Robot {
                                                       }
                                                       geometry DEF l_hand_pitch Mesh {
                                                         url [
-                                                          "../urdf/gr1t1/meshes/l_hand_pitch.STL"
+                                                          "../urdf/GR1T1/meshes/l_hand_pitch.STL"
                                                         ]
                                                       }
                                                     }
@@ -1613,8 +1613,8 @@ DEF GR1Simple Robot {
                     }
                   ]
                   endPoint Solid {
-                    translation 4.5764836364959976e-11 -0.12663999999847528 0.21724999652758759
-                    rotation -0.999999999999913 4.0733491520231045e-07 -9.018852744852599e-08 0.4362699995403577
+                    translation 4.576483636495548e-11 -0.12663999999847528 0.21724999652758759
+                    rotation -0.999999999999913 4.073349152023108e-07 -9.018852744852627e-08 0.4362699995403577
                     children [
                       Shape {
                         appearance DEF r_upper_arm_pitch_material PBRAppearance {
@@ -1624,7 +1624,7 @@ DEF GR1Simple Robot {
                         }
                         geometry DEF r_upper_arm_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/r_upper_arm_pitch.STL"
+                            "../urdf/GR1T1/meshes/r_upper_arm_pitch.STL"
                           ]
                         }
                       }
@@ -1648,7 +1648,7 @@ DEF GR1Simple Robot {
                         ]
                         endPoint Solid {
                           translation 0 -0.067 0
-                          rotation 0.9999999999476314 -2.118309094035841e-06 1.0012476071544652e-05 0.23627864529522496
+                          rotation 0.9999999999476314 -2.1183090940358704e-06 1.0012476071544742e-05 0.23627864529522496
                           children [
                             Shape {
                               appearance DEF r_upper_arm_roll_material PBRAppearance {
@@ -1658,7 +1658,7 @@ DEF GR1Simple Robot {
                               }
                               geometry DEF r_upper_arm_roll Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/r_upper_arm_roll.STL"
+                                  "../urdf/GR1T1/meshes/r_upper_arm_roll.STL"
                                 ]
                               }
                             }
@@ -1692,7 +1692,7 @@ DEF GR1Simple Robot {
                                     }
                                     geometry DEF r_upper_arm_yaw Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/r_upper_arm_yaw.STL"
+                                        "../urdf/GR1T1/meshes/r_upper_arm_yaw.STL"
                                       ]
                                     }
                                   }
@@ -1726,7 +1726,7 @@ DEF GR1Simple Robot {
                                           }
                                           geometry DEF r_lower_arm_pitch Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/r_lower_arm_pitch.STL"
+                                              "../urdf/GR1T1/meshes/r_lower_arm_pitch.STL"
                                             ]
                                           }
                                         }
@@ -1741,7 +1741,7 @@ DEF GR1Simple Robot {
                                               }
                                               geometry DEF r_hand_yaw Mesh {
                                                 url [
-                                                  "../urdf/gr1t1/meshes/r_hand_yaw.STL"
+                                                  "../urdf/GR1T1/meshes/r_hand_yaw.STL"
                                                 ]
                                               }
                                             }
@@ -1756,7 +1756,7 @@ DEF GR1Simple Robot {
                                                   }
                                                   geometry DEF r_hand_roll Mesh {
                                                     url [
-                                                      "../urdf/gr1t1/meshes/r_hand_roll.STL"
+                                                      "../urdf/GR1T1/meshes/r_hand_roll.STL"
                                                     ]
                                                   }
                                                 }
@@ -1770,7 +1770,7 @@ DEF GR1Simple Robot {
                                                       }
                                                       geometry DEF r_hand_pitch Mesh {
                                                         url [
-                                                          "../urdf/gr1t1/meshes/r_hand_pitch.STL"
+                                                          "../urdf/GR1T1/meshes/r_hand_pitch.STL"
                                                         ]
                                                       }
                                                     }
@@ -1954,7 +1954,7 @@ DEF GR1Simple Robot {
       }
     }
   ]
-  name "GR1Simple"
+  name "GR1T1Simple"
   physics Physics {
     density -1
     mass 6.45117
@@ -1966,6 +1966,6 @@ DEF GR1Simple Robot {
       1.726078e-05 -7.021831e-05 -3.163851e-06
     ]
   }
-  controller "webots_gr1_simple"
+  controller "webots_gr1t1_simple"
   supervisor TRUE
 }

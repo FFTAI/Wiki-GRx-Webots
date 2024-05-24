@@ -91,7 +91,7 @@ DEF GR1 Robot {
       }
       geometry DEF base Mesh {
         url [
-          "../urdf/gr1t1/meshes/base.STL"
+          "../urdf/GR1T1/meshes/base.STL"
         ]
       }
       castShadows FALSE
@@ -147,7 +147,7 @@ DEF GR1 Robot {
             }
             geometry DEF l_thigh_roll Mesh {
               url [
-                "../urdf/gr1t1/meshes/l_thigh_roll.STL"
+                "../urdf/GR1T1/meshes/l_thigh_roll.STL"
               ]
             }
             castShadows FALSE
@@ -181,7 +181,7 @@ DEF GR1 Robot {
                   }
                   geometry DEF l_thigh_yaw Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/l_thigh_yaw.STL"
+                      "../urdf/GR1T1/meshes/l_thigh_yaw.STL"
                     ]
                   }
                   castShadows FALSE
@@ -215,7 +215,7 @@ DEF GR1 Robot {
                         }
                         geometry DEF l_thigh_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/l_thigh_pitch.STL"
+                            "../urdf/GR1T1/meshes/l_thigh_pitch.STL"
                           ]
                         }
                         castShadows FALSE
@@ -249,7 +249,7 @@ DEF GR1 Robot {
                               }
                               geometry DEF l_shank_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/l_shank_pitch.STL"
+                                  "../urdf/GR1T1/meshes/l_shank_pitch.STL"
                                 ]
                               }
                               castShadows FALSE
@@ -287,7 +287,7 @@ DEF GR1 Robot {
                                     }
                                     geometry DEF l_foot_pitch Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/l_foot_pitch.STL"
+                                        "../urdf/GR1T1/meshes/l_foot_pitch.STL"
                                       ]
                                     }
                                   }
@@ -320,7 +320,7 @@ DEF GR1 Robot {
                                           }
                                           geometry DEF l_foot_roll Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/l_foot_roll.STL"
+                                              "../urdf/GR1T1/meshes/l_foot_roll.STL"
                                             ]
                                           }
                                           castShadows FALSE
@@ -486,7 +486,7 @@ DEF GR1 Robot {
             }
             geometry DEF r_thigh_roll Mesh {
               url [
-                "../urdf/gr1t1/meshes/r_thigh_roll.STL"
+                "../urdf/GR1T1/meshes/r_thigh_roll.STL"
               ]
             }
             castShadows FALSE
@@ -520,7 +520,7 @@ DEF GR1 Robot {
                   }
                   geometry DEF r_thigh_yaw Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/r_thigh_yaw.STL"
+                      "../urdf/GR1T1/meshes/r_thigh_yaw.STL"
                     ]
                   }
                   castShadows FALSE
@@ -554,7 +554,7 @@ DEF GR1 Robot {
                         }
                         geometry DEF r_thigh_pitch Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/r_thigh_pitch.STL"
+                            "../urdf/GR1T1/meshes/r_thigh_pitch.STL"
                           ]
                         }
                         castShadows FALSE
@@ -588,7 +588,7 @@ DEF GR1 Robot {
                               }
                               geometry DEF r_shank_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/r_shank_pitch.STL"
+                                  "../urdf/GR1T1/meshes/r_shank_pitch.STL"
                                 ]
                               }
                               castShadows FALSE
@@ -626,7 +626,7 @@ DEF GR1 Robot {
                                     }
                                     geometry DEF r_foot_pitch Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/r_foot_pitch.STL"
+                                        "../urdf/GR1T1/meshes/r_foot_pitch.STL"
                                       ]
                                     }
                                     castShadows FALSE
@@ -660,7 +660,7 @@ DEF GR1 Robot {
                                           }
                                           geometry DEF r_foot_roll Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/r_foot_roll.STL"
+                                              "../urdf/GR1T1/meshes/r_foot_roll.STL"
                                             ]
                                           }
                                           castShadows FALSE
@@ -826,7 +826,7 @@ DEF GR1 Robot {
             }
             geometry DEF waist_yaw Mesh {
               url [
-                "../urdf/gr1t1/meshes/waist_yaw.STL"
+                "../urdf/GR1T1/meshes/waist_yaw.STL"
               ]
             }
             castShadows FALSE
@@ -860,7 +860,7 @@ DEF GR1 Robot {
                   }
                   geometry DEF waist_pitch Mesh {
                     url [
-                      "../urdf/gr1t1/meshes/waist_pitch.STL"
+                      "../urdf/GR1T1/meshes/waist_pitch.STL"
                     ]
                   }
                   castShadows FALSE
@@ -894,7 +894,7 @@ DEF GR1 Robot {
                         }
                         geometry DEF waist_roll Mesh {
                           url [
-                            "../urdf/gr1t1/meshes/waist_roll.STL"
+                            "../urdf/GR1T1/meshes/waist_roll.STL"
                           ]
                         }
                         castShadows FALSE
@@ -928,7 +928,7 @@ DEF GR1 Robot {
                               }
                               geometry DEF head_yaw Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/head_yaw.STL"
+                                  "../urdf/GR1T1/meshes/head_yaw.STL"
                                 ]
                               }
                               castShadows FALSE
@@ -962,7 +962,7 @@ DEF GR1 Robot {
                                     }
                                     geometry DEF head_roll Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/head_roll.STL"
+                                        "../urdf/GR1T1/meshes/head_roll.STL"
                                       ]
                                     }
                                     castShadows FALSE
@@ -994,7 +994,7 @@ DEF GR1 Robot {
                                           }
                                           geometry DEF head_pitch Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/head_pitch.STL"
+                                              "../urdf/GR1T1/meshes/head_pitch.STL"
                                             ]
                                           }
                                           castShadows FALSE
@@ -1076,7 +1076,7 @@ DEF GR1 Robot {
                               }
                               geometry DEF l_upper_arm_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/l_upper_arm_pitch.STL"
+                                  "../urdf/GR1T1/meshes/l_upper_arm_pitch.STL"
                                 ]
                               }
                             }
@@ -1109,7 +1109,7 @@ DEF GR1 Robot {
                                     }
                                     geometry DEF l_upper_arm_roll Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/l_upper_arm_roll.STL"
+                                        "../urdf/GR1T1/meshes/l_upper_arm_roll.STL"
                                       ]
                                     }
                                   }
@@ -1142,7 +1142,7 @@ DEF GR1 Robot {
                                           }
                                           geometry DEF l_upper_arm_yaw Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/l_upper_arm_yaw.STL"
+                                              "../urdf/GR1T1/meshes/l_upper_arm_yaw.STL"
                                             ]
                                           }
                                           castShadows FALSE
@@ -1176,7 +1176,7 @@ DEF GR1 Robot {
                                                 }
                                                 geometry DEF l_lower_arm_pitch Mesh {
                                                   url [
-                                                    "../urdf/gr1t1/meshes/l_lower_arm_pitch.STL"
+                                                    "../urdf/GR1T1/meshes/l_lower_arm_pitch.STL"
                                                   ]
                                                 }
                                                 castShadows FALSE
@@ -1210,7 +1210,7 @@ DEF GR1 Robot {
                                                       }
                                                       geometry DEF l_hand_yaw Mesh {
                                                         url [
-                                                          "../urdf/gr1t1/meshes/l_hand_yaw.STL"
+                                                          "../urdf/GR1T1/meshes/l_hand_yaw.STL"
                                                         ]
                                                       }
                                                       castShadows FALSE
@@ -1246,7 +1246,7 @@ DEF GR1 Robot {
                                                             }
                                                             geometry DEF l_hand_roll Mesh {
                                                               url [
-                                                                "../urdf/gr1t1/meshes/l_hand_roll.STL"
+                                                                "../urdf/GR1T1/meshes/l_hand_roll.STL"
                                                               ]
                                                             }
                                                             castShadows FALSE
@@ -1278,7 +1278,7 @@ DEF GR1 Robot {
                                                                   }
                                                                   geometry DEF l_hand_pitch Mesh {
                                                                     url [
-                                                                      "../urdf/gr1t1/meshes/l_hand_pitch.STL"
+                                                                      "../urdf/GR1T1/meshes/l_hand_pitch.STL"
                                                                     ]
                                                                   }
                                                                 }
@@ -1445,7 +1445,7 @@ DEF GR1 Robot {
                               }
                               geometry DEF r_upper_arm_pitch Mesh {
                                 url [
-                                  "../urdf/gr1t1/meshes/r_upper_arm_pitch.STL"
+                                  "../urdf/GR1T1/meshes/r_upper_arm_pitch.STL"
                                 ]
                               }
                             }
@@ -1478,7 +1478,7 @@ DEF GR1 Robot {
                                     }
                                     geometry DEF r_upper_arm_roll Mesh {
                                       url [
-                                        "../urdf/gr1t1/meshes/r_upper_arm_roll.STL"
+                                        "../urdf/GR1T1/meshes/r_upper_arm_roll.STL"
                                       ]
                                     }
                                   }
@@ -1511,7 +1511,7 @@ DEF GR1 Robot {
                                           }
                                           geometry DEF r_upper_arm_yaw Mesh {
                                             url [
-                                              "../urdf/gr1t1/meshes/r_upper_arm_yaw.STL"
+                                              "../urdf/GR1T1/meshes/r_upper_arm_yaw.STL"
                                             ]
                                           }
                                           castShadows FALSE
@@ -1547,7 +1547,7 @@ DEF GR1 Robot {
                                                 }
                                                 geometry DEF r_lower_arm_pitch Mesh {
                                                   url [
-                                                    "../urdf/gr1t1/meshes/r_lower_arm_pitch.STL"
+                                                    "../urdf/GR1T1/meshes/r_lower_arm_pitch.STL"
                                                   ]
                                                 }
                                                 castShadows FALSE
@@ -1581,7 +1581,7 @@ DEF GR1 Robot {
                                                       }
                                                       geometry DEF r_hand_yaw Mesh {
                                                         url [
-                                                          "../urdf/gr1t1/meshes/r_hand_yaw.STL"
+                                                          "../urdf/GR1T1/meshes/r_hand_yaw.STL"
                                                         ]
                                                       }
                                                       castShadows FALSE
@@ -1617,7 +1617,7 @@ DEF GR1 Robot {
                                                             }
                                                             geometry DEF r_hand_roll Mesh {
                                                               url [
-                                                                "../urdf/gr1t1/meshes/r_hand_roll.STL"
+                                                                "../urdf/GR1T1/meshes/r_hand_roll.STL"
                                                               ]
                                                             }
                                                             castShadows FALSE
@@ -1649,7 +1649,7 @@ DEF GR1 Robot {
                                                                   }
                                                                   geometry DEF r_hand_pitch Mesh {
                                                                     url [
-                                                                      "../urdf/gr1t1/meshes/r_hand_pitch.STL"
+                                                                      "../urdf/GR1T1/meshes/r_hand_pitch.STL"
                                                                     ]
                                                                   }
                                                                   castShadows FALSE

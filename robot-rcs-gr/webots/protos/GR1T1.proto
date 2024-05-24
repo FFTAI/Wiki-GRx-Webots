@@ -2,7 +2,7 @@
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0
 # This is a proto file for Webots for the GR1T1
-# Extracted from: /home/fftai/Repository/robot-rcs-gr/robot-rcs-gr/webots/urdf/gr1t1/urdf/GR1T1-nowhla.urdf
+# Extracted from: /home/fftai/Repository/robot-rcs-gr/robot-rcs-gr/webots/urdf/GR1T1/urdf/GR1T1-nowhla.urdf
 
 PROTO GR1T1 [
   field  SFVec3f     translation     0 0 0
@@ -33,7 +33,7 @@ PROTO GR1T1 [
           metalness 0
         }
         geometry DEF base Mesh {
-          url "../urdf/gr1t1/meshes/base.STL"
+          url "../urdf/GR1T1/meshes/base.STL"
         }
       }
       HingeJoint {
@@ -63,7 +63,7 @@ PROTO GR1T1 [
                 metalness 0
               }
               geometry DEF l_thigh_roll Mesh {
-                url "../urdf/gr1t1/meshes/l_thigh_roll.STL"
+                url "../urdf/GR1T1/meshes/l_thigh_roll.STL"
               }
             }
             HingeJoint {
@@ -93,7 +93,7 @@ PROTO GR1T1 [
                       metalness 0
                     }
                     geometry DEF l_thigh_yaw Mesh {
-                      url "../urdf/gr1t1/meshes/l_thigh_yaw.STL"
+                      url "../urdf/GR1T1/meshes/l_thigh_yaw.STL"
                     }
                   }
                   HingeJoint {
@@ -123,7 +123,7 @@ PROTO GR1T1 [
                             metalness 0
                           }
                           geometry DEF l_thigh_pitch Mesh {
-                            url "../urdf/gr1t1/meshes/l_thigh_pitch.STL"
+                            url "../urdf/GR1T1/meshes/l_thigh_pitch.STL"
                           }
                         }
                         HingeJoint {
@@ -153,7 +153,7 @@ PROTO GR1T1 [
                                   metalness 0
                                 }
                                 geometry DEF l_shank_pitch Mesh {
-                                  url "../urdf/gr1t1/meshes/l_shank_pitch.STL"
+                                  url "../urdf/GR1T1/meshes/l_shank_pitch.STL"
                                 }
                               }
                               HingeJoint {
@@ -183,7 +183,7 @@ PROTO GR1T1 [
                                         metalness 0
                                       }
                                       geometry DEF l_foot_pitch Mesh {
-                                        url "../urdf/gr1t1/meshes/l_foot_pitch.STL"
+                                        url "../urdf/GR1T1/meshes/l_foot_pitch.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -211,7 +211,7 @@ PROTO GR1T1 [
                                               metalness 0
                                             }
                                             geometry DEF l_foot_roll Mesh {
-                                              url "../urdf/gr1t1/meshes/l_foot_roll.STL"
+                                              url "../urdf/GR1T1/meshes/l_foot_roll.STL"
                                             }
                                           }
                                         ]
@@ -361,7 +361,7 @@ PROTO GR1T1 [
                 metalness 0
               }
               geometry DEF r_thigh_roll Mesh {
-                url "../urdf/gr1t1/meshes/r_thigh_roll.STL"
+                url "../urdf/GR1T1/meshes/r_thigh_roll.STL"
               }
             }
             HingeJoint {
@@ -391,7 +391,7 @@ PROTO GR1T1 [
                       metalness 0
                     }
                     geometry DEF r_thigh_yaw Mesh {
-                      url "../urdf/gr1t1/meshes/r_thigh_yaw.STL"
+                      url "../urdf/GR1T1/meshes/r_thigh_yaw.STL"
                     }
                   }
                   HingeJoint {
@@ -421,7 +421,7 @@ PROTO GR1T1 [
                             metalness 0
                           }
                           geometry DEF r_thigh_pitch Mesh {
-                            url "../urdf/gr1t1/meshes/r_thigh_pitch.STL"
+                            url "../urdf/GR1T1/meshes/r_thigh_pitch.STL"
                           }
                         }
                         HingeJoint {
@@ -451,7 +451,7 @@ PROTO GR1T1 [
                                   metalness 0
                                 }
                                 geometry DEF r_shank_pitch Mesh {
-                                  url "../urdf/gr1t1/meshes/r_shank_pitch.STL"
+                                  url "../urdf/GR1T1/meshes/r_shank_pitch.STL"
                                 }
                               }
                               HingeJoint {
@@ -481,7 +481,7 @@ PROTO GR1T1 [
                                         metalness 0
                                       }
                                       geometry DEF r_foot_pitch Mesh {
-                                        url "../urdf/gr1t1/meshes/r_foot_pitch.STL"
+                                        url "../urdf/GR1T1/meshes/r_foot_pitch.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -509,7 +509,7 @@ PROTO GR1T1 [
                                               metalness 0
                                             }
                                             geometry DEF r_foot_roll Mesh {
-                                              url "../urdf/gr1t1/meshes/r_foot_roll.STL"
+                                              url "../urdf/GR1T1/meshes/r_foot_roll.STL"
                                             }
                                           }
                                         ]
@@ -642,7 +642,7 @@ PROTO GR1T1 [
               metalness 0
             }
             geometry DEF waist_yaw Mesh {
-              url "../urdf/gr1t1/meshes/waist_yaw.STL"
+              url "../urdf/GR1T1/meshes/waist_yaw.STL"
             }
           }
           Solid {
@@ -655,7 +655,7 @@ PROTO GR1T1 [
                   metalness 0
                 }
                 geometry DEF waist_pitch Mesh {
-                  url "../urdf/gr1t1/meshes/waist_pitch.STL"
+                  url "../urdf/GR1T1/meshes/waist_pitch.STL"
                 }
               }
               Solid {
@@ -668,7 +668,7 @@ PROTO GR1T1 [
                       metalness 0
                     }
                     geometry DEF waist_roll Mesh {
-                      url "../urdf/gr1t1/meshes/waist_roll.STL"
+                      url "../urdf/GR1T1/meshes/waist_roll.STL"
                     }
                   }
                   Solid {
@@ -681,7 +681,7 @@ PROTO GR1T1 [
                           metalness 0
                         }
                         geometry DEF head_yaw Mesh {
-                          url "../urdf/gr1t1/meshes/head_yaw.STL"
+                          url "../urdf/GR1T1/meshes/head_yaw.STL"
                         }
                       }
                       Solid {
@@ -694,7 +694,7 @@ PROTO GR1T1 [
                               metalness 0
                             }
                             geometry DEF head_roll Mesh {
-                              url "../urdf/gr1t1/meshes/head_roll.STL"
+                              url "../urdf/GR1T1/meshes/head_roll.STL"
                             }
                           }
                           Solid {
@@ -706,7 +706,7 @@ PROTO GR1T1 [
                                   metalness 0
                                 }
                                 geometry DEF head_pitch Mesh {
-                                  url "../urdf/gr1t1/meshes/head_pitch.STL"
+                                  url "../urdf/GR1T1/meshes/head_pitch.STL"
                                 }
                               }
                             ]
@@ -773,7 +773,7 @@ PROTO GR1T1 [
                             metalness 0
                           }
                           geometry DEF l_upper_arm_pitch Mesh {
-                            url "../urdf/gr1t1/meshes/l_upper_arm_pitch.STL"
+                            url "../urdf/GR1T1/meshes/l_upper_arm_pitch.STL"
                           }
                         }
                         HingeJoint {
@@ -804,7 +804,7 @@ PROTO GR1T1 [
                                   metalness 0
                                 }
                                 geometry DEF l_upper_arm_roll Mesh {
-                                  url "../urdf/gr1t1/meshes/l_upper_arm_roll.STL"
+                                  url "../urdf/GR1T1/meshes/l_upper_arm_roll.STL"
                                 }
                               }
                               HingeJoint {
@@ -834,7 +834,7 @@ PROTO GR1T1 [
                                         metalness 0
                                       }
                                       geometry DEF l_upper_arm_yaw Mesh {
-                                        url "../urdf/gr1t1/meshes/l_upper_arm_yaw.STL"
+                                        url "../urdf/GR1T1/meshes/l_upper_arm_yaw.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -864,7 +864,7 @@ PROTO GR1T1 [
                                               metalness 0
                                             }
                                             geometry DEF l_lower_arm_pitch Mesh {
-                                              url "../urdf/gr1t1/meshes/l_lower_arm_pitch.STL"
+                                              url "../urdf/GR1T1/meshes/l_lower_arm_pitch.STL"
                                             }
                                           }
                                           Solid {
@@ -877,7 +877,7 @@ PROTO GR1T1 [
                                                   metalness 0
                                                 }
                                                 geometry DEF l_hand_yaw Mesh {
-                                                  url "../urdf/gr1t1/meshes/l_hand_yaw.STL"
+                                                  url "../urdf/GR1T1/meshes/l_hand_yaw.STL"
                                                 }
                                               }
                                               Solid {
@@ -890,7 +890,7 @@ PROTO GR1T1 [
                                                       metalness 0
                                                     }
                                                     geometry DEF l_hand_roll Mesh {
-                                                      url "../urdf/gr1t1/meshes/l_hand_roll.STL"
+                                                      url "../urdf/GR1T1/meshes/l_hand_roll.STL"
                                                     }
                                                   }
                                                   Solid {
@@ -902,7 +902,7 @@ PROTO GR1T1 [
                                                           metalness 0
                                                         }
                                                         geometry DEF l_hand_pitch Mesh {
-                                                          url "../urdf/gr1t1/meshes/l_hand_pitch.STL"
+                                                          url "../urdf/GR1T1/meshes/l_hand_pitch.STL"
                                                         }
                                                       }
                                                     ]
@@ -1047,7 +1047,7 @@ PROTO GR1T1 [
                             metalness 0
                           }
                           geometry DEF r_upper_arm_pitch Mesh {
-                            url "../urdf/gr1t1/meshes/r_upper_arm_pitch.STL"
+                            url "../urdf/GR1T1/meshes/r_upper_arm_pitch.STL"
                           }
                         }
                         HingeJoint {
@@ -1078,7 +1078,7 @@ PROTO GR1T1 [
                                   metalness 0
                                 }
                                 geometry DEF r_upper_arm_roll Mesh {
-                                  url "../urdf/gr1t1/meshes/r_upper_arm_roll.STL"
+                                  url "../urdf/GR1T1/meshes/r_upper_arm_roll.STL"
                                 }
                               }
                               HingeJoint {
@@ -1108,7 +1108,7 @@ PROTO GR1T1 [
                                         metalness 0
                                       }
                                       geometry DEF r_upper_arm_yaw Mesh {
-                                        url "../urdf/gr1t1/meshes/r_upper_arm_yaw.STL"
+                                        url "../urdf/GR1T1/meshes/r_upper_arm_yaw.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -1138,7 +1138,7 @@ PROTO GR1T1 [
                                               metalness 0
                                             }
                                             geometry DEF r_lower_arm_pitch Mesh {
-                                              url "../urdf/gr1t1/meshes/r_lower_arm_pitch.STL"
+                                              url "../urdf/GR1T1/meshes/r_lower_arm_pitch.STL"
                                             }
                                           }
                                           Solid {
@@ -1151,7 +1151,7 @@ PROTO GR1T1 [
                                                   metalness 0
                                                 }
                                                 geometry DEF r_hand_yaw Mesh {
-                                                  url "../urdf/gr1t1/meshes/r_hand_yaw.STL"
+                                                  url "../urdf/GR1T1/meshes/r_hand_yaw.STL"
                                                 }
                                               }
                                               Solid {
@@ -1164,7 +1164,7 @@ PROTO GR1T1 [
                                                       metalness 0
                                                     }
                                                     geometry DEF r_hand_roll Mesh {
-                                                      url "../urdf/gr1t1/meshes/r_hand_roll.STL"
+                                                      url "../urdf/GR1T1/meshes/r_hand_roll.STL"
                                                     }
                                                   }
                                                   Solid {
@@ -1176,7 +1176,7 @@ PROTO GR1T1 [
                                                           metalness 0
                                                         }
                                                         geometry DEF r_hand_pitch Mesh {
-                                                          url "../urdf/gr1t1/meshes/r_hand_pitch.STL"
+                                                          url "../urdf/GR1T1/meshes/r_hand_pitch.STL"
                                                         }
                                                       }
                                                     ]
