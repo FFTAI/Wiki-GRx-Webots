@@ -108,10 +108,16 @@ class WebotsGR1T2Simple(WebotsRobot):
         self.decimation = 20
 
         # nerual network
+        """
+        In this example, we use the pre-trained model to control the robot:
+        1. stand_model.pt: the model is trained to make the robot stand still. If the robot has been pushed, it will try to recover balance and move back to the stand position.
+        2. walk_model.pt: the model is trained to make the robot walk. The robot will walk following the given command.
+        """
         try:
             self.model_file_path = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                "model_4000.pt"
+                # "stand_model.pt"
+                "walk_model.pt"
             )
 
             model = torch.load(self.model_file_path, map_location=torch.device("cpu"))
@@ -144,7 +150,9 @@ class WebotsGR1T2Simple(WebotsRobot):
         self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 180 * torch.pi / 3
 
     def control_loop_algorithm(self):
+        # move to stand position at first
         if self.decimation_count < 500:
+
             # stand control
             self.flag_joint_pd_torque_control = [
                 False, False, False, False, False,  # left leg (5), no ankle roll
@@ -159,10 +167,17 @@ class WebotsGR1T2Simple(WebotsRobot):
                                             - torch.tensor([self.joint_default_position], dtype=torch.float32)
             self.joint_pd_control_target = self.joint_default_position
 
+        # start RL control
         elif self.decimation_count >= 500 \
                 and self.decimation_count % self.decimation == 0:
-            # rl_walk control
+            # commands
+            """
+            You can change the command to control the robot. The command is a 3D vector, [x, y, yaw].
+            However, in stand_model.pt, make sure the command is [0, 0, 0] to make the robot stand still.
+            """
             torch_commands = torch.tensor([[0, 0, 0]], dtype=torch.float32)
+
+            # rl_walk control
             torch_base_measured_quat_to_world = torch.tensor([self.imu_measured_quat_to_world], dtype=torch.float32)
             torch_base_measured_rpy_vel_to_world = torch.tensor([self.gyro_measured_rpy_vel_to_self], dtype=torch.float32)
             torch_joint_measured_position_value = torch.tensor([self.joint_measured_position_value], dtype=torch.float32)
