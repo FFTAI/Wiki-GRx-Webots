@@ -487,7 +487,7 @@ DEF GR1T1Simple Robot {
           maxVelocity 12.15
           minPosition -0.09
           maxPosition 0.79
-          maxTorque 100
+          maxTorque 80
         }
         PositionSensor {
           name "l_hip_roll_sensor"
@@ -521,7 +521,7 @@ DEF GR1T1Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 82.5
+                maxTorque 60
               }
               PositionSensor {
                 name "l_hip_yaw_sensor"
@@ -827,7 +827,7 @@ DEF GR1T1Simple Robot {
           maxVelocity 12.15
           minPosition -0.79
           maxPosition 0.09
-          maxTorque 100
+          maxTorque 80
         }
         PositionSensor {
           name "r_hip_roll_sensor"
@@ -861,7 +861,7 @@ DEF GR1T1Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 82.5
+                maxTorque 60
               }
               PositionSensor {
                 name "r_hip_yaw_sensor"

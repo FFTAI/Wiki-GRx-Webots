@@ -484,7 +484,7 @@ DEF GR1T2Simple Robot {
           maxVelocity 12.15
           minPosition -0.09
           maxPosition 0.79
-          maxTorque 48
+          maxTorque 80
         }
         PositionSensor {
           name "l_hip_roll_sensor"
@@ -517,7 +517,7 @@ DEF GR1T2Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 60
               }
               PositionSensor {
                 name "l_hip_yaw_sensor"
@@ -550,7 +550,7 @@ DEF GR1T2Simple Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "l_hip_pitch_sensor"
@@ -586,7 +586,7 @@ DEF GR1T2Simple Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "l_knee_pitch_sensor"
@@ -622,7 +622,7 @@ DEF GR1T2Simple Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "l_ankle_pitch_sensor"
@@ -799,7 +799,7 @@ DEF GR1T2Simple Robot {
           maxVelocity 12.15
           minPosition -0.79
           maxPosition 0.09
-          maxTorque 48
+          maxTorque 80
         }
         PositionSensor {
           name "r_hip_roll_sensor"
@@ -832,7 +832,7 @@ DEF GR1T2Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 60
               }
               PositionSensor {
                 name "r_hip_yaw_sensor"
@@ -865,7 +865,7 @@ DEF GR1T2Simple Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "r_hip_pitch_sensor"
@@ -901,7 +901,7 @@ DEF GR1T2Simple Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "r_knee_pitch_sensor"
@@ -937,7 +937,7 @@ DEF GR1T2Simple Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "r_ankle_pitch_sensor"
