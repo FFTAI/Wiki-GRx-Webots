@@ -88,8 +88,6 @@ class WebotsGR1T1Simple(WebotsRobot):
         self.joint_pd_control_kp = numpy.array([
             114, 86, 229, 229, 30.5,  # left leg(5)
             114, 86, 229, 229, 30.5,  # right leg(5)
-            # 57, 43, 114, 114, 15.3,  # left leg(5)
-            # 57, 43, 114, 114, 15.3,  # right leg(5)
         ])
         self.joint_pd_control_kd = self.joint_pd_control_kp / 15
         self.joint_pd_control_max = numpy.array([
@@ -111,6 +109,7 @@ class WebotsGR1T1Simple(WebotsRobot):
             self.model_file_path = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
                 "stand_model.pt"
+                # "walk_model.pt"
             )
 
             model = torch.load(self.model_file_path, map_location=torch.device("cpu"))
