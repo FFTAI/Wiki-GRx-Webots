@@ -40,7 +40,8 @@ This repository provides an environment used to test the RL policy trained in NV
     ```
 
 6. Load the world file:
-    - Load the world file `wiki-grx-webots/robot-rcs-gr/webots/worlds/gr1t1_simple.wbt` in Webots.
+    - Load the world file `wiki-grx-webots/robot-rcs-gr/webots/worlds/gr1t1_simple.wbt` in Webots to control the GR1T1 robot model.
+    - Load the world file `wiki-grx-webots/robot-rcs-gr/webots/worlds/gr1t2_simple.wbt` in Webots to control the GR1T2 robot model.
 
 The robot will be loaded and start walking in the simulation environment.
 

@@ -1294,14 +1294,14 @@ DEF GR1T1Simple Robot {
                   }
                   device [
                     RotationalMotor {
-                      name "l_shoulder_pitch"
+                      name "l_upper_arm_pitch"
                       maxVelocity 9.11
                       minPosition -2.79
                       maxPosition 1.92
                       maxTorque 38
                     }
                     PositionSensor {
-                      name "l_shoulder_pitch_sensor"
+                      name "l_upper_arm_pitch_sensor"
                     }
                   ]
                   endPoint Solid {
@@ -1328,14 +1328,14 @@ DEF GR1T1Simple Robot {
                         }
                         device [
                           RotationalMotor {
-                            name "l_shoulder_roll"
+                            name "l_upper_arm_roll"
                             maxVelocity 9.11
                             minPosition -0.57
                             maxPosition 3.27
                             maxTorque 38
                           }
                           PositionSensor {
-                            name "l_shoulder_roll_sensor"
+                            name "l_upper_arm_roll_sensor"
                           }
                         ]
                         endPoint Solid {
@@ -1362,14 +1362,14 @@ DEF GR1T1Simple Robot {
                               }
                               device [
                                 RotationalMotor {
-                                  name "l_shoulder_yaw"
+                                  name "l_upper_arm_yaw"
                                   maxVelocity 7.33
                                   minPosition -2.97
                                   maxPosition 2.97
                                   maxTorque 30
                                 }
                                 PositionSensor {
-                                  name "l_shoulder_yaw_sensor"
+                                  name "l_upper_arm_yaw_sensor"
                                 }
                               ]
                               endPoint Solid {
@@ -1396,14 +1396,14 @@ DEF GR1T1Simple Robot {
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "l_elbow_pitch"
+                                        name "l_lower_arm_pitch"
                                         maxVelocity 7.33
                                         minPosition -2.27
                                         maxPosition 2.27
                                         maxTorque 30
                                       }
                                       PositionSensor {
-                                        name "l_elbow_pitch_sensor"
+                                        name "l_lower_arm_pitch_sensor"
                                       }
                                     ]
                                     endPoint Solid {
@@ -1602,14 +1602,14 @@ DEF GR1T1Simple Robot {
                   }
                   device [
                     RotationalMotor {
-                      name "r_shoulder_pitch"
+                      name "r_upper_arm_pitch"
                       maxVelocity 9.11
                       minPosition -2.79
                       maxPosition 1.92
                       maxTorque 38
                     }
                     PositionSensor {
-                      name "r_shoulder_pitch_sensor"
+                      name "r_upper_arm_pitch_sensor"
                     }
                   ]
                   endPoint Solid {
@@ -1636,14 +1636,14 @@ DEF GR1T1Simple Robot {
                         }
                         device [
                           RotationalMotor {
-                            name "r_shoulder_roll"
+                            name "r_upper_arm_roll"
                             maxVelocity 9.11
                             minPosition -3.27
                             maxPosition 0.57
                             maxTorque 38
                           }
                           PositionSensor {
-                            name "r_shoulder_roll_sensor"
+                            name "r_upper_arm_roll_sensor"
                           }
                         ]
                         endPoint Solid {
@@ -1670,14 +1670,14 @@ DEF GR1T1Simple Robot {
                               }
                               device [
                                 RotationalMotor {
-                                  name "r_shoulder_yaw"
+                                  name "r_upper_arm_yaw"
                                   maxVelocity 7.33
                                   minPosition -2.97
                                   maxPosition 2.97
                                   maxTorque 30
                                 }
                                 PositionSensor {
-                                  name "r_shoulder_yaw_sensor"
+                                  name "r_upper_arm_yaw_sensor"
                                 }
                               ]
                               endPoint Solid {
@@ -1704,14 +1704,14 @@ DEF GR1T1Simple Robot {
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "r_elbow_pitch"
+                                        name "r_lower_arm_pitch"
                                         maxVelocity 7.33
                                         minPosition -2.27
                                         maxPosition 2.27
                                         maxTorque 30
                                       }
                                       PositionSensor {
-                                        name "r_elbow_pitch_sensor"
+                                        name "r_lower_arm_pitch_sensor"
                                       }
                                     ]
                                     endPoint Solid {

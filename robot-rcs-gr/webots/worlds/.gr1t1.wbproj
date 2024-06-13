@@ -7,6 +7,3 @@ centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: -1
 consoles: Console:All:All
-renderingDevicePerspectives: GR1:gr1_display;1;0.895833;0;0
-renderingDevicePerspectives: GR1:kinect color;1;0.895833;0;0
-renderingDevicePerspectives: GR1:kinect range;1;0.895833;0;0

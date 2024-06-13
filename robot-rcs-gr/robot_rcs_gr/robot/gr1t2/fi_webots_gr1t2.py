@@ -21,7 +21,7 @@ class WebotsGR1T2(WebotsRobot):
             # right leg
             "r_thigh_roll", "r_thigh_yaw", "r_thigh_pitch", "r_shank_pitch", "r_foot_pitch", "r_foot_roll",
             # waist
-            "waist_pitch", "waist_roll", "waist_yaw",
+            "waist_yaw", "waist_pitch", "waist_roll",
             # head
             "head_pitch", "head_yaw", "head_roll",
             # left arm
@@ -38,13 +38,13 @@ class WebotsGR1T2(WebotsRobot):
             # right leg
             "r_hip_roll", "r_hip_yaw", "r_hip_pitch", "r_knee_pitch", "r_ankle_pitch", "r_ankle_roll",
             # waist
-            "waist_pitch", "waist_roll", "waist_yaw",
+            "waist_yaw", "waist_pitch", "waist_roll",
             # head
             "head_pitch", "head_yaw", "head_roll",
             # left arm
-            "l_upper_arm_pitch", "l_upper_arm_roll", "l_upper_arm_yaw", "l_lower_arm_pitch", "l_hand_pitch", "l_hand_roll", "l_hand_yaw",
+            "l_shoulder_pitch", "l_shoulder_roll", "l_shoulder_yaw", "l_elbow_pitch", "l_wrist_pitch", "l_wrist_roll", "l_wrist_yaw",
             # right arm
-            "r_upper_arm_pitch", "r_upper_arm_roll", "r_upper_arm_yaw", "r_lower_arm_pitch", "r_hand_pitch", "r_hand_roll", "r_hand_yaw",
+            "r_shoulder_pitch", "r_shoulder_roll", "r_shoulder_yaw", "r_elbow_pitch", "r_wrist_pitch", "r_wrist_roll", "r_wrist_yaw",
         ]
         self.joints_kp = [
             0, 0, 0, 0, 0, 0,
@@ -79,19 +79,19 @@ class WebotsGR1T2(WebotsRobot):
             # right leg
             "r_hip_roll_sensor", "r_hip_yaw_sensor", "r_hip_pitch_sensor", "r_knee_pitch_sensor", "r_ankle_pitch_sensor", "r_ankle_roll_sensor",
             # waist
-            "waist_pitch_sensor", "waist_roll_sensor", "waist_yaw_sensor",
+            "waist_yaw_sensor", "waist_pitch_sensor", "waist_roll_sensor",
             # head
             "head_pitch_sensor", "head_yaw_sensor", "head_roll_sensor",
             # left arm
-            "l_upper_arm_pitch_sensor", "l_upper_arm_roll_sensor", "l_upper_arm_yaw_sensor", "l_lower_arm_pitch_sensor", "l_hand_pitch_sensor", "l_hand_roll_sensor", "l_hand_yaw_sensor",
+            "l_shoulder_pitch_sensor", "l_shoulder_roll_sensor", "l_shoulder_yaw_sensor", "l_elbow_pitch_sensor", "l_wrist_pitch_sensor", "l_wrist_roll_sensor", "l_wrist_yaw_sensor",
             # right arm
-            "r_upper_arm_pitch_sensor", "r_upper_arm_roll_sensor", "r_upper_arm_yaw_sensor", "r_lower_arm_pitch_sensor", "r_hand_pitch_sensor", "r_hand_roll_sensor", "r_hand_yaw_sensor",
+            "r_shoulder_pitch_sensor", "r_shoulder_roll_sensor", "r_shoulder_yaw_sensor", "r_elbow_pitch_sensor", "r_wrist_pitch_sensor", "r_wrist_roll_sensor", "r_wrist_yaw_sensor",
         ]
 
         self.num_of_imus = 1
         self.imus = []
         self.imus_name = [
-            "inertial_unit"
+            "inertial unit"
         ]
 
         self.num_of_gyros = 1
@@ -158,3 +158,6 @@ class WebotsGR1T2(WebotsRobot):
             -38.0, -38.0, -30.0, -30.0, -10.0, -10.0, -10.0,  # left arm(7)
             -38.0, -38.0, -30.0, -30.0, -10.0, -10.0, -10.0,  # right arm(7)
         ])
+
+        self.flag_joint_pd_torque_control = False * numpy.ones(self.num_of_joints)
+        self.flag_joint_position_control = True * numpy.ones(self.num_of_joints)

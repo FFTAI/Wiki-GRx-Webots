@@ -102,6 +102,9 @@ class WebotsGR1T1Simple(WebotsRobot):
             -60.0, -45.0, -130.0, -130.0, -16.0,  # right leg(5)
         ])
 
+        self.flag_joint_pd_torque_control = False * numpy.ones(self.num_of_joints)
+        self.flag_joint_position_control = True * numpy.ones(self.num_of_joints)
+
         # --------------------------------------------------------------------------------
         # rl_walk algorithm
         self.decimation_count = 0
@@ -144,7 +147,11 @@ class WebotsGR1T1Simple(WebotsRobot):
         self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 180 * torch.pi / 3
 
     def control_loop_algorithm(self):
-        if self.decimation_count < 500:
+        """
+        When starting the simulation, the robot will stand still for 500 steps (0.001s per second), which is 0.5 seconds.
+        Then, the robot will start walking using the RL algorithm.
+        """
+        if self.decimation_count < 500:  # if simulation step is less than 500
             # stand control
             self.flag_joint_pd_torque_control = [
                 False, False, False, False, False,  # left leg (5), no ankle roll

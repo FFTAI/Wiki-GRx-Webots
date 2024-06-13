@@ -435,9 +435,34 @@ DEF stairs Solid {
   boundingObject Group {
   }
 }
-Robot {
-  translation 0 -4.87 0.99
+DEF GR1T2 Robot {
+  translation 0 -4.87 0.956
+  rotation -0.026550140363985085 -0.9983054982113122 0.05178052034999541 0.002184641589263285
   children [
+    Solid {
+      translation -0.0648 0 -0.1015
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0 0
+            }
+          }
+          geometry Box {
+            size 0.02 0.02 0.01
+          }
+        }
+        Accelerometer {
+        }
+        Gyro {
+        }
+        InertialUnit {
+        }
+      ]
+      name "imu_link"
+      physics Physics {
+      }
+    }
     Shape {
       appearance DEF base_material PBRAppearance {
         baseColor 0.75294 0.75294 0.75294
@@ -446,7 +471,7 @@ Robot {
       }
       geometry DEF base Mesh {
         url [
-          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/base.STL"
+          "../urdf/GR1T2/meshes/base.STL"
         ]
       }
     }
@@ -460,7 +485,7 @@ Robot {
           maxVelocity 12.15
           minPosition -0.09
           maxPosition 0.79
-          maxTorque 48
+          maxTorque 100
         }
         PositionSensor {
           name "l_hip_roll_sensor"
@@ -476,9 +501,9 @@ Robot {
               roughness 1
               metalness 0
             }
-            geometry DEF Lleg1 Mesh {
+            geometry DEF l_thigh_roll Mesh {
               url [
-                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg1.STL"
+                "../urdf/GR1T2/meshes/Lleg1.STL"
               ]
             }
           }
@@ -493,7 +518,7 @@ Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 82.5
               }
               PositionSensor {
                 name "l_hip_yaw_sensor"
@@ -508,9 +533,9 @@ Robot {
                     roughness 1
                     metalness 0
                   }
-                  geometry DEF Lleg2 Mesh {
+                  geometry DEF l_thigh_yaw Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg2.STL"
+                      "../urdf/GR1T2/meshes/Lleg2.STL"
                     ]
                   }
                 }
@@ -525,7 +550,7 @@ Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "l_hip_pitch_sensor"
@@ -541,9 +566,9 @@ Robot {
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF Lleg3 Mesh {
+                        geometry DEF l_thigh_pitch Mesh {
                           url [
-                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg3.STL"
+                            "../urdf/GR1T2/meshes/Lleg3.STL"
                           ]
                         }
                       }
@@ -558,7 +583,7 @@ Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "l_knee_pitch_sensor"
@@ -574,9 +599,9 @@ Robot {
                                 roughness 1
                                 metalness 0
                               }
-                              geometry DEF Lleg4 Mesh {
+                              geometry DEF l_shank_pitch Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg4.STL"
+                                  "../urdf/GR1T2/meshes/Lleg4.STL"
                                 ]
                               }
                             }
@@ -591,7 +616,7 @@ Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "l_ankle_pitch_sensor"
@@ -607,9 +632,9 @@ Robot {
                                       roughness 1
                                       metalness 0
                                     }
-                                    geometry DEF Lleg5 Mesh {
+                                    geometry DEF l_foot_pitch Mesh {
                                       url [
-                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg5.STL"
+                                        "../urdf/GR1T2/meshes/Lleg5.STL"
                                       ]
                                     }
                                   }
@@ -622,7 +647,7 @@ Robot {
                                         maxVelocity 20.32
                                         minPosition -0.44
                                         maxPosition 0.44
-                                        maxTorque 30
+                                        maxTorque 16
                                       }
                                       PositionSensor {
                                         name "l_ankle_roll_sensor"
@@ -637,9 +662,9 @@ Robot {
                                             roughness 1
                                             metalness 0
                                           }
-                                          geometry DEF Lleg6 Mesh {
+                                          geometry DEF l_foot_roll Mesh {
                                             url [
-                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg6.STL"
+                                              "../urdf/GR1T2/meshes/Lleg6.STL"
                                             ]
                                           }
                                         }
@@ -785,7 +810,7 @@ Robot {
           maxVelocity 12.15
           minPosition -0.79
           maxPosition 0.09
-          maxTorque 48
+          maxTorque 100
         }
         PositionSensor {
           name "r_hip_roll_sensor"
@@ -801,9 +826,9 @@ Robot {
               roughness 1
               metalness 0
             }
-            geometry DEF Rleg1 Mesh {
+            geometry DEF r_thigh_roll Mesh {
               url [
-                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg1.STL"
+                "../urdf/GR1T2/meshes/Rleg1.STL"
               ]
             }
           }
@@ -818,7 +843,7 @@ Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 82.5
               }
               PositionSensor {
                 name "r_hip_yaw_sensor"
@@ -833,9 +858,9 @@ Robot {
                     roughness 1
                     metalness 0
                   }
-                  geometry DEF Rleg2 Mesh {
+                  geometry DEF r_thigh_yaw Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg2.STL"
+                      "../urdf/GR1T2/meshes/Rleg2.STL"
                     ]
                   }
                 }
@@ -850,7 +875,7 @@ Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "r_hip_pitch_sensor"
@@ -866,9 +891,9 @@ Robot {
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF Rleg3 Mesh {
+                        geometry DEF r_thigh_pitch Mesh {
                           url [
-                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg3.STL"
+                            "../urdf/GR1T2/meshes/Rleg3.STL"
                           ]
                         }
                       }
@@ -883,7 +908,7 @@ Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "r_knee_pitch_sensor"
@@ -899,9 +924,9 @@ Robot {
                                 roughness 1
                                 metalness 0
                               }
-                              geometry DEF Rleg4 Mesh {
+                              geometry DEF r_shank_pitch Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg4.STL"
+                                  "../urdf/GR1T2/meshes/Rleg4.STL"
                                 ]
                               }
                             }
@@ -916,7 +941,7 @@ Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "r_ankle_pitch_sensor"
@@ -932,9 +957,9 @@ Robot {
                                       roughness 1
                                       metalness 0
                                     }
-                                    geometry DEF Rleg5 Mesh {
+                                    geometry DEF r_foot_pitch Mesh {
                                       url [
-                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg5.STL"
+                                        "../urdf/GR1T2/meshes/Rleg5.STL"
                                       ]
                                     }
                                   }
@@ -947,7 +972,7 @@ Robot {
                                         maxVelocity 20.32
                                         minPosition -0.44
                                         maxPosition 0.44
-                                        maxTorque 30
+                                        maxTorque 16
                                       }
                                       PositionSensor {
                                         name "r_ankle_roll_sensor"
@@ -962,9 +987,9 @@ Robot {
                                             roughness 1
                                             metalness 0
                                           }
-                                          geometry DEF Rleg6 Mesh {
+                                          geometry DEF r_foot_roll Mesh {
                                             url [
-                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg6.STL"
+                                              "../urdf/GR1T2/meshes/Rleg6.STL"
                                             ]
                                           }
                                         }
@@ -1107,28 +1132,28 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "joint_waist_yaw"
+          name "waist_yaw"
           maxVelocity 16.76
           minPosition -1.05
           maxPosition 1.05
-          maxTorque 66
+          maxTorque 82.5
         }
         PositionSensor {
-          name "joint_waist_yaw_sensor"
+          name "waist_yaw_sensor"
         }
       ]
       endPoint Solid {
         translation 0 0 0.0065
         children [
           Shape {
-            appearance DEF link_waist_yaw_material PBRAppearance {
+            appearance DEF waist_yaw_material PBRAppearance {
               baseColor 0.75294 0.75294 0.75294
               roughness 1
               metalness 0
             }
-            geometry DEF waist3 Mesh {
+            geometry DEF waist_yaw Mesh {
               url [
-                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist3.STL"
+                "../urdf/GR1T2/meshes/waist3.STL"
               ]
             }
           }
@@ -1139,14 +1164,14 @@ Robot {
             }
             device [
               RotationalMotor {
-                name "joint_waist_pitch"
+                name "waist_pitch"
                 maxVelocity 16.76
                 minPosition -0.52
                 maxPosition 1.22
-                maxTorque 66
+                maxTorque 82.5
               }
               PositionSensor {
-                name "joint_waist_pitch_sensor"
+                name "waist_pitch_sensor"
               }
             ]
             endPoint Solid {
@@ -1154,14 +1179,14 @@ Robot {
               rotation 0 1 0 0
               children [
                 Shape {
-                  appearance DEF link_waist_pitch_material PBRAppearance {
+                  appearance DEF waist_pitch_material PBRAppearance {
                     baseColor 0.75294 0.75294 0.75294
                     roughness 1
                     metalness 0
                   }
-                  geometry DEF waist2 Mesh {
+                  geometry DEF waist_pitch Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist2.STL"
+                      "../urdf/GR1T2/meshes/waist2.STL"
                     ]
                   }
                 }
@@ -1171,14 +1196,14 @@ Robot {
                   }
                   device [
                     RotationalMotor {
-                      name "joint_waist_roll"
+                      name "waist_roll"
                       maxVelocity 16.76
                       minPosition -0.7
                       maxPosition 0.7
-                      maxTorque 66
+                      maxTorque 82.5
                     }
                     PositionSensor {
-                      name "joint_waist_roll_sensor"
+                      name "waist_roll_sensor"
                     }
                   ]
                   endPoint Solid {
@@ -1186,20 +1211,160 @@ Robot {
                     rotation 1 0 0 0
                     children [
                       Shape {
-                        appearance DEF link_waist_roll_material PBRAppearance {
+                        appearance DEF waist_roll_material PBRAppearance {
                           baseColor 0.75294 0.75294 0.75294
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF waist1 Mesh {
+                        geometry DEF waist_roll Mesh {
                           url [
-                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist1.STL"
+                            "../urdf/GR1T2/meshes/waist1.STL"
                           ]
                         }
                       }
                       Solid {
                         translation 0 0 0.160213
                         children [
+                          HingeJoint {
+                            jointParameters HingeJointParameters {
+                              axis 0 1 0
+                              anchor 0.001 -0.000226 0.144787
+                            }
+                            device [
+                              RotationalMotor {
+                                name "head_pitch"
+                                maxVelocity 27.96
+                                minPosition -0.87
+                                maxPosition 0.87
+                                maxTorque 10
+                              }
+                              PositionSensor {
+                                name "head_pitch_sensor"
+                              }
+                            ]
+                            endPoint Solid {
+                              translation 0.001 -0.000226 0.144787
+                              rotation 0 1 0 0
+                              children [
+                                Shape {
+                                  appearance DEF head_pitch_material PBRAppearance {
+                                    baseColor 0.75294 0.75294 0.75294
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry DEF head_yaw Mesh {
+                                    url [
+                                      "../urdf/GR1T2/meshes/head3.STL"
+                                    ]
+                                  }
+                                }
+                                HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "head_roll"
+                                      maxVelocity 27.96
+                                      minPosition -0.35
+                                      maxPosition 0.35
+                                      maxTorque 10
+                                    }
+                                    PositionSensor {
+                                      name "head_roll_sensor"
+                                    }
+                                  ]
+                                  endPoint Solid {
+                                    rotation 1 0 0 0
+                                    children [
+                                      Shape {
+                                        appearance DEF head_roll_material PBRAppearance {
+                                          baseColor 0.75294 0.75294 0.75294
+                                          roughness 1
+                                          metalness 0
+                                        }
+                                        geometry DEF head_roll Mesh {
+                                          url [
+                                            "../urdf/GR1T2/meshes/head2.STL"
+                                          ]
+                                        }
+                                      }
+                                      HingeJoint {
+                                        jointParameters HingeJointParameters {
+                                          axis 0 0 1
+                                          anchor 0 5.4e-05 0.036
+                                        }
+                                        device [
+                                          RotationalMotor {
+                                            name "head_yaw"
+                                            maxVelocity 27.96
+                                            minPosition -2.71
+                                            maxPosition 2.71
+                                            maxTorque 10
+                                          }
+                                          PositionSensor {
+                                            name "head_yaw_sensor"
+                                          }
+                                        ]
+                                        endPoint Solid {
+                                          translation 0 5.4e-05 0.036
+                                          children [
+                                            Shape {
+                                              appearance DEF head_yaw_material PBRAppearance {
+                                                baseColor 0.75294 0.75294 0.75294
+                                                roughness 1
+                                                metalness 0
+                                              }
+                                              geometry DEF head_pitch Mesh {
+                                                url [
+                                                  "../urdf/GR1T2/meshes/head1.STL"
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                          name "head_yaw"
+                                          physics Physics {
+                                            density -1
+                                            mass 1.389835
+                                            centerOfMass [
+                                              0.02323 0.000269 0.11024
+                                            ]
+                                            inertiaMatrix [
+                                              0.00803907 0.00988205 0.00625075
+                                              -9.9e-07 0.00082206 -1.27e-06
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                    name "head_roll"
+                                    physics Physics {
+                                      density -1
+                                      mass 0.071317
+                                      centerOfMass [
+                                        -0.003976 2.3e-05 0.015347
+                                      ]
+                                      inertiaMatrix [
+                                        2.863e-05 2.039e-05 2.713e-05
+                                        0 -2.8e-06 0
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                              name "head_pitch"
+                              physics Physics {
+                                density -1
+                                mass 0.005435
+                                centerOfMass [
+                                  0.000438 0 0
+                                ]
+                                inertiaMatrix [
+                                  3.6e-07 7e-08 3.6e-07
+                                  0 0 0
+                                ]
+                              }
+                            }
+                          }
                           HingeJoint {
                             jointParameters HingeJointParameters {
                               axis 0 0.906307 0.422621
@@ -1227,9 +1392,9 @@ Robot {
                                     roughness 1
                                     metalness 0
                                   }
-                                  geometry DEF Larm1 Mesh {
+                                  geometry DEF l_upper_arm_pitch Mesh {
                                     url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm1.STL"
+                                      "../urdf/GR1T2/meshes/Larm1.STL"
                                     ]
                                   }
                                 }
@@ -1259,9 +1424,9 @@ Robot {
                                           roughness 1
                                           metalness 0
                                         }
-                                        geometry DEF Larm2 Mesh {
+                                        geometry DEF l_upper_arm_roll Mesh {
                                           url [
-                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm2.STL"
+                                            "../urdf/GR1T2/meshes/Larm2.STL"
                                           ]
                                         }
                                       }
@@ -1291,9 +1456,9 @@ Robot {
                                                 roughness 1
                                                 metalness 0
                                               }
-                                              geometry DEF Larm3 Mesh {
+                                              geometry DEF l_upper_arm_yaw Mesh {
                                                 url [
-                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm3.STL"
+                                                  "../urdf/GR1T2/meshes/Larm3.STL"
                                                 ]
                                               }
                                             }
@@ -1324,9 +1489,9 @@ Robot {
                                                       roughness 1
                                                       metalness 0
                                                     }
-                                                    geometry DEF Larm4 Mesh {
+                                                    geometry DEF l_lower_arm_pitch Mesh {
                                                       url [
-                                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm4.STL"
+                                                        "../urdf/GR1T2/meshes/Larm4.STL"
                                                       ]
                                                     }
                                                   }
@@ -1341,7 +1506,7 @@ Robot {
                                                         maxVelocity 24.4
                                                         minPosition -2.97
                                                         maxPosition 2.97
-                                                        maxTorque 10.2
+                                                        maxTorque 10
                                                       }
                                                       PositionSensor {
                                                         name "l_wrist_yaw_sensor"
@@ -1356,9 +1521,9 @@ Robot {
                                                             roughness 1
                                                             metalness 0
                                                           }
-                                                          geometry DEF Larm5 Mesh {
+                                                          geometry DEF l_hand_yaw Mesh {
                                                             url [
-                                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm5.STL"
+                                                              "../urdf/GR1T2/meshes/Larm5.STL"
                                                             ]
                                                           }
                                                         }
@@ -1372,7 +1537,7 @@ Robot {
                                                               maxVelocity 27.96
                                                               minPosition -0.96
                                                               maxPosition 0.87
-                                                              maxTorque 3.95
+                                                              maxTorque 10
                                                             }
                                                             PositionSensor {
                                                               name "l_wrist_roll_sensor"
@@ -1388,9 +1553,9 @@ Robot {
                                                                   roughness 1
                                                                   metalness 0
                                                                 }
-                                                                geometry DEF Larm6 Mesh {
+                                                                geometry DEF l_hand_roll Mesh {
                                                                   url [
-                                                                    "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm6.STL"
+                                                                    "../urdf/GR1T2/meshes/Larm6.STL"
                                                                   ]
                                                                 }
                                                               }
@@ -1404,7 +1569,7 @@ Robot {
                                                                     maxVelocity 27.96
                                                                     minPosition -0.61
                                                                     maxPosition 0.61
-                                                                    maxTorque 3.95
+                                                                    maxTorque 10
                                                                   }
                                                                   PositionSensor {
                                                                     name "l_wrist_pitch_sensor"
@@ -1419,9 +1584,9 @@ Robot {
                                                                         roughness 1
                                                                         metalness 0
                                                                       }
-                                                                      geometry DEF Larm7 Mesh {
+                                                                      geometry DEF l_hand_pitch Mesh {
                                                                         url [
-                                                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm7.STL"
+                                                                          "../urdf/GR1T2/meshes/Larm7.STL"
                                                                         ]
                                                                       }
                                                                     }
@@ -1583,9 +1748,9 @@ Robot {
                                     roughness 1
                                     metalness 0
                                   }
-                                  geometry DEF Rarm1 Mesh {
+                                  geometry DEF r_upper_arm_pitch Mesh {
                                     url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm1.STL"
+                                      "../urdf/GR1T2/meshes/Rarm1.STL"
                                     ]
                                   }
                                 }
@@ -1615,9 +1780,9 @@ Robot {
                                           roughness 1
                                           metalness 0
                                         }
-                                        geometry DEF Rarm2 Mesh {
+                                        geometry DEF r_upper_arm_roll Mesh {
                                           url [
-                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm2.STL"
+                                            "../urdf/GR1T2/meshes/Rarm2.STL"
                                           ]
                                         }
                                       }
@@ -1647,9 +1812,9 @@ Robot {
                                                 roughness 1
                                                 metalness 0
                                               }
-                                              geometry DEF Rarm3 Mesh {
+                                              geometry DEF r_upper_arm_yaw Mesh {
                                                 url [
-                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm3.STL"
+                                                  "../urdf/GR1T2/meshes/Rarm3.STL"
                                                 ]
                                               }
                                             }
@@ -1680,9 +1845,9 @@ Robot {
                                                       roughness 1
                                                       metalness 0
                                                     }
-                                                    geometry DEF Rarm4 Mesh {
+                                                    geometry DEF r_lower_arm_pitch Mesh {
                                                       url [
-                                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm4.STL"
+                                                        "../urdf/GR1T2/meshes/Rarm4.STL"
                                                       ]
                                                     }
                                                   }
@@ -1697,7 +1862,7 @@ Robot {
                                                         maxVelocity 24.4
                                                         minPosition -2.97
                                                         maxPosition 2.97
-                                                        maxTorque 10.2
+                                                        maxTorque 10
                                                       }
                                                       PositionSensor {
                                                         name "r_wrist_yaw_sensor"
@@ -1712,9 +1877,9 @@ Robot {
                                                             roughness 1
                                                             metalness 0
                                                           }
-                                                          geometry DEF Rarm5 Mesh {
+                                                          geometry DEF r_hand_yaw Mesh {
                                                             url [
-                                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm5.STL"
+                                                              "../urdf/GR1T2/meshes/Rarm5.STL"
                                                             ]
                                                           }
                                                         }
@@ -1728,7 +1893,7 @@ Robot {
                                                               maxVelocity 27.96
                                                               minPosition -0.87
                                                               maxPosition 0.96
-                                                              maxTorque 3.95
+                                                              maxTorque 10
                                                             }
                                                             PositionSensor {
                                                               name "r_wrist_roll_sensor"
@@ -1744,9 +1909,9 @@ Robot {
                                                                   roughness 1
                                                                   metalness 0
                                                                 }
-                                                                geometry DEF Rarm6 Mesh {
+                                                                geometry DEF r_hand_roll Mesh {
                                                                   url [
-                                                                    "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm6.STL"
+                                                                    "../urdf/GR1T2/meshes/Rarm6.STL"
                                                                   ]
                                                                 }
                                                               }
@@ -1760,7 +1925,7 @@ Robot {
                                                                     maxVelocity 27.96
                                                                     minPosition -0.61
                                                                     maxPosition 0.61
-                                                                    maxTorque 3.95
+                                                                    maxTorque 10
                                                                   }
                                                                   PositionSensor {
                                                                     name "r_wrist_pitch_sensor"
@@ -1775,9 +1940,9 @@ Robot {
                                                                         roughness 1
                                                                         metalness 0
                                                                       }
-                                                                      geometry DEF Rarm7 Mesh {
+                                                                      geometry DEF r_hand_pitch Mesh {
                                                                         url [
-                                                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm7.STL"
+                                                                          "../urdf/GR1T2/meshes/Rarm7.STL"
                                                                         ]
                                                                       }
                                                                     }
@@ -1912,153 +2077,13 @@ Robot {
                               }
                             }
                           }
-                          HingeJoint {
-                            jointParameters HingeJointParameters {
-                              axis 0 1 0
-                              anchor 0.001 -0.000226 0.144787
-                            }
-                            device [
-                              RotationalMotor {
-                                name "joint_head_pitch"
-                                maxVelocity 27.96
-                                minPosition -0.87
-                                maxPosition 0.87
-                                maxTorque 3.95
-                              }
-                              PositionSensor {
-                                name "joint_head_pitch_sensor"
-                              }
-                            ]
-                            endPoint Solid {
-                              translation 0.001 -0.000226 0.144787
-                              rotation 0 1 0 0
-                              children [
-                                Shape {
-                                  appearance DEF link_head_pitch_material PBRAppearance {
-                                    baseColor 0.75294 0.75294 0.75294
-                                    roughness 1
-                                    metalness 0
-                                  }
-                                  geometry DEF head3 Mesh {
-                                    url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head3.STL"
-                                    ]
-                                  }
-                                }
-                                HingeJoint {
-                                  jointParameters HingeJointParameters {
-                                  }
-                                  device [
-                                    RotationalMotor {
-                                      name "joint_head_roll"
-                                      maxVelocity 27.96
-                                      minPosition -0.35
-                                      maxPosition 0.35
-                                      maxTorque 3.95
-                                    }
-                                    PositionSensor {
-                                      name "joint_head_roll_sensor"
-                                    }
-                                  ]
-                                  endPoint Solid {
-                                    rotation 1 0 0 0
-                                    children [
-                                      Shape {
-                                        appearance DEF link_head_roll_material PBRAppearance {
-                                          baseColor 0.75294 0.75294 0.75294
-                                          roughness 1
-                                          metalness 0
-                                        }
-                                        geometry DEF head2 Mesh {
-                                          url [
-                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head2.STL"
-                                          ]
-                                        }
-                                      }
-                                      HingeJoint {
-                                        jointParameters HingeJointParameters {
-                                          axis 0 0 1
-                                          anchor 0 5.4e-05 0.036
-                                        }
-                                        device [
-                                          RotationalMotor {
-                                            name "joint_head_yaw"
-                                            maxVelocity 27.96
-                                            minPosition -2.71
-                                            maxPosition 2.71
-                                            maxTorque 3.95
-                                          }
-                                          PositionSensor {
-                                            name "joint_head_yaw_sensor"
-                                          }
-                                        ]
-                                        endPoint Solid {
-                                          translation 0 5.4e-05 0.036
-                                          children [
-                                            Shape {
-                                              appearance DEF link_head_yaw_material PBRAppearance {
-                                                baseColor 0.75294 0.75294 0.75294
-                                                roughness 1
-                                                metalness 0
-                                              }
-                                              geometry DEF head1 Mesh {
-                                                url [
-                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head1.STL"
-                                                ]
-                                              }
-                                            }
-                                          ]
-                                          name "link_head_yaw"
-                                          physics Physics {
-                                            density -1
-                                            mass 1.389835
-                                            centerOfMass [
-                                              0.02323 0.000269 0.11024
-                                            ]
-                                            inertiaMatrix [
-                                              0.00803907 0.00988205 0.00625075
-                                              -9.9e-07 0.00082206 -1.27e-06
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    ]
-                                    name "link_head_roll"
-                                    physics Physics {
-                                      density -1
-                                      mass 0.071317
-                                      centerOfMass [
-                                        -0.003976 2.3e-05 0.015347
-                                      ]
-                                      inertiaMatrix [
-                                        2.863e-05 2.039e-05 2.713e-05
-                                        0 -2.8e-06 0
-                                      ]
-                                    }
-                                  }
-                                }
-                              ]
-                              name "link_head_pitch"
-                              physics Physics {
-                                density -1
-                                mass 0.005435
-                                centerOfMass [
-                                  0.000438 0 0
-                                ]
-                                inertiaMatrix [
-                                  3.6e-07 7e-08 3.6e-07
-                                  0 0 0
-                                ]
-                              }
-                            }
-                          }
                         ]
-                        name "link_torso"
+                        name "torso"
                         physics Physics {
                         }
                       }
                     ]
-                    name "link_waist_roll"
+                    name "waist_roll"
                     boundingObject Pose {
                       translation 0 0 0.15
                       children [
@@ -2082,7 +2107,7 @@ Robot {
                   }
                 }
               ]
-              name "link_waist_pitch"
+              name "waist_pitch"
               physics Physics {
                 density -1
                 mass 2.904215
@@ -2097,7 +2122,7 @@ Robot {
             }
           }
         ]
-        name "link_waist_yaw"
+        name "waist_yaw"
         physics Physics {
           density -1
           mass 0.507438
@@ -2124,4 +2149,6 @@ Robot {
       -0.00020848 -0.0025121 -4.364e-05
     ]
   }
+  controller "webots_gr1t2"
+  supervisor TRUE
 }

@@ -470,7 +470,7 @@ DEF GR1T2Simple Robot {
       }
       geometry DEF base Mesh {
         url [
-          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/base.STL"
+          "../urdf/GR1T2/meshes/base.STL"
         ]
       }
     }
@@ -484,7 +484,7 @@ DEF GR1T2Simple Robot {
           maxVelocity 12.15
           minPosition -0.09
           maxPosition 0.79
-          maxTorque 48
+          maxTorque 100
         }
         PositionSensor {
           name "l_hip_roll_sensor"
@@ -502,7 +502,7 @@ DEF GR1T2Simple Robot {
             }
             geometry DEF Lleg1 Mesh {
               url [
-                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg1.STL"
+                "../urdf/GR1T2/meshes/Lleg1.STL"
               ]
             }
           }
@@ -517,7 +517,7 @@ DEF GR1T2Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 82.5
               }
               PositionSensor {
                 name "l_hip_yaw_sensor"
@@ -534,7 +534,7 @@ DEF GR1T2Simple Robot {
                   }
                   geometry DEF Lleg2 Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg2.STL"
+                      "../urdf/GR1T2/meshes/Lleg2.STL"
                     ]
                   }
                 }
@@ -550,7 +550,7 @@ DEF GR1T2Simple Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "l_hip_pitch_sensor"
@@ -568,7 +568,7 @@ DEF GR1T2Simple Robot {
                         }
                         geometry DEF Lleg3 Mesh {
                           url [
-                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg3.STL"
+                            "../urdf/GR1T2/meshes/Lleg3.STL"
                           ]
                         }
                       }
@@ -586,7 +586,7 @@ DEF GR1T2Simple Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "l_knee_pitch_sensor"
@@ -604,7 +604,7 @@ DEF GR1T2Simple Robot {
                               }
                               geometry DEF Lleg4 Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg4.STL"
+                                  "../urdf/GR1T2/meshes/Lleg4.STL"
                                 ]
                               }
                             }
@@ -622,7 +622,7 @@ DEF GR1T2Simple Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "l_ankle_pitch_sensor"
@@ -640,7 +640,7 @@ DEF GR1T2Simple Robot {
                                     }
                                     geometry DEF Lleg5 Mesh {
                                       url [
-                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg5.STL"
+                                        "../urdf/GR1T2/meshes/Lleg5.STL"
                                       ]
                                     }
                                   }
@@ -654,7 +654,7 @@ DEF GR1T2Simple Robot {
                                         }
                                         geometry DEF Lleg6 Mesh {
                                           url [
-                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Lleg6.STL"
+                                            "../urdf/GR1T2/meshes/Lleg6.STL"
                                           ]
                                         }
                                       }
@@ -799,7 +799,7 @@ DEF GR1T2Simple Robot {
           maxVelocity 12.15
           minPosition -0.79
           maxPosition 0.09
-          maxTorque 48
+          maxTorque 100
         }
         PositionSensor {
           name "r_hip_roll_sensor"
@@ -817,7 +817,7 @@ DEF GR1T2Simple Robot {
             }
             geometry DEF Rleg1 Mesh {
               url [
-                "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg1.STL"
+                "../urdf/GR1T2/meshes/Rleg1.STL"
               ]
             }
           }
@@ -832,7 +832,7 @@ DEF GR1T2Simple Robot {
                 maxVelocity 16.76
                 minPosition -0.7
                 maxPosition 0.7
-                maxTorque 66
+                maxTorque 82.5
               }
               PositionSensor {
                 name "r_hip_yaw_sensor"
@@ -849,7 +849,7 @@ DEF GR1T2Simple Robot {
                   }
                   geometry DEF Rleg2 Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg2.STL"
+                      "../urdf/GR1T2/meshes/Rleg2.STL"
                     ]
                   }
                 }
@@ -865,7 +865,7 @@ DEF GR1T2Simple Robot {
                       maxVelocity 37.38
                       minPosition -1.75
                       maxPosition 0.7
-                      maxTorque 225
+                      maxTorque 160
                     }
                     PositionSensor {
                       name "r_hip_pitch_sensor"
@@ -883,7 +883,7 @@ DEF GR1T2Simple Robot {
                         }
                         geometry DEF Rleg3 Mesh {
                           url [
-                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg3.STL"
+                            "../urdf/GR1T2/meshes/Rleg3.STL"
                           ]
                         }
                       }
@@ -901,7 +901,7 @@ DEF GR1T2Simple Robot {
                             maxVelocity 37.38
                             minPosition -0.09
                             maxPosition 1.92
-                            maxTorque 225
+                            maxTorque 160
                           }
                           PositionSensor {
                             name "r_knee_pitch_sensor"
@@ -919,7 +919,7 @@ DEF GR1T2Simple Robot {
                               }
                               geometry DEF Rleg4 Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg4.STL"
+                                  "../urdf/GR1T2/meshes/Rleg4.STL"
                                 ]
                               }
                             }
@@ -937,7 +937,7 @@ DEF GR1T2Simple Robot {
                                   maxVelocity 20.32
                                   minPosition -1.05
                                   maxPosition 0.52
-                                  maxTorque 15
+                                  maxTorque 16
                                 }
                                 PositionSensor {
                                   name "r_ankle_pitch_sensor"
@@ -955,7 +955,7 @@ DEF GR1T2Simple Robot {
                                     }
                                     geometry DEF Rleg5 Mesh {
                                       url [
-                                        "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg5.STL"
+                                        "../urdf/GR1T2/meshes/Rleg5.STL"
                                       ]
                                     }
                                   }
@@ -969,7 +969,7 @@ DEF GR1T2Simple Robot {
                                         }
                                         geometry DEF Rleg6 Mesh {
                                           url [
-                                            "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rleg6.STL"
+                                            "../urdf/GR1T2/meshes/Rleg6.STL"
                                           ]
                                         }
                                       }
@@ -1115,7 +1115,7 @@ DEF GR1T2Simple Robot {
           }
           geometry DEF waist3 Mesh {
             url [
-              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist3.STL"
+              "../urdf/GR1T2/meshes/waist3.STL"
             ]
           }
         }
@@ -1130,7 +1130,7 @@ DEF GR1T2Simple Robot {
               }
               geometry DEF waist2 Mesh {
                 url [
-                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist2.STL"
+                  "../urdf/GR1T2/meshes/waist2.STL"
                 ]
               }
             }
@@ -1145,7 +1145,7 @@ DEF GR1T2Simple Robot {
                   }
                   geometry DEF waist1 Mesh {
                     url [
-                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/waist1.STL"
+                      "../urdf/GR1T2/meshes/waist1.STL"
                     ]
                   }
                 }
@@ -1173,7 +1173,7 @@ DEF GR1T2Simple Robot {
                           }
                           geometry DEF head3 Mesh {
                             url [
-                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head3.STL"
+                              "../urdf/GR1T2/meshes/head3.STL"
                             ]
                           }
                         }
@@ -1187,7 +1187,7 @@ DEF GR1T2Simple Robot {
                               }
                               geometry DEF head2 Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head2.STL"
+                                  "../urdf/GR1T2/meshes/head2.STL"
                                 ]
                               }
                             }
@@ -1202,7 +1202,7 @@ DEF GR1T2Simple Robot {
                                   }
                                   geometry DEF head1 Mesh {
                                     url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/head1.STL"
+                                      "../urdf/GR1T2/meshes/head1.STL"
                                     ]
                                   }
                                 }
@@ -1260,7 +1260,7 @@ DEF GR1T2Simple Robot {
                           }
                           geometry DEF Larm1 Mesh {
                             url [
-                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm1.STL"
+                              "../urdf/GR1T2/meshes/Larm1.STL"
                             ]
                           }
                         }
@@ -1276,7 +1276,7 @@ DEF GR1T2Simple Robot {
                               }
                               geometry DEF Larm2 Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm2.STL"
+                                  "../urdf/GR1T2/meshes/Larm2.STL"
                                 ]
                               }
                             }
@@ -1291,7 +1291,7 @@ DEF GR1T2Simple Robot {
                                   }
                                   geometry DEF Larm3 Mesh {
                                     url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm3.STL"
+                                      "../urdf/GR1T2/meshes/Larm3.STL"
                                     ]
                                   }
                                 }
@@ -1307,7 +1307,7 @@ DEF GR1T2Simple Robot {
                                       }
                                       geometry DEF Larm4 Mesh {
                                         url [
-                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm4.STL"
+                                          "../urdf/GR1T2/meshes/Larm4.STL"
                                         ]
                                       }
                                     }
@@ -1322,7 +1322,7 @@ DEF GR1T2Simple Robot {
                                           }
                                           geometry DEF Larm5 Mesh {
                                             url [
-                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm5.STL"
+                                              "../urdf/GR1T2/meshes/Larm5.STL"
                                             ]
                                           }
                                         }
@@ -1337,7 +1337,7 @@ DEF GR1T2Simple Robot {
                                               }
                                               geometry DEF Larm6 Mesh {
                                                 url [
-                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm6.STL"
+                                                  "../urdf/GR1T2/meshes/Larm6.STL"
                                                 ]
                                               }
                                             }
@@ -1351,7 +1351,7 @@ DEF GR1T2Simple Robot {
                                                   }
                                                   geometry DEF Larm7 Mesh {
                                                     url [
-                                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Larm7.STL"
+                                                      "../urdf/GR1T2/meshes/Larm7.STL"
                                                     ]
                                                   }
                                                 }
@@ -1491,7 +1491,7 @@ DEF GR1T2Simple Robot {
                           }
                           geometry DEF Rarm1 Mesh {
                             url [
-                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm1.STL"
+                              "../urdf/GR1T2/meshes/Rarm1.STL"
                             ]
                           }
                         }
@@ -1507,7 +1507,7 @@ DEF GR1T2Simple Robot {
                               }
                               geometry DEF Rarm2 Mesh {
                                 url [
-                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm2.STL"
+                                  "../urdf/GR1T2/meshes/Rarm2.STL"
                                 ]
                               }
                             }
@@ -1522,7 +1522,7 @@ DEF GR1T2Simple Robot {
                                   }
                                   geometry DEF Rarm3 Mesh {
                                     url [
-                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm3.STL"
+                                      "../urdf/GR1T2/meshes/Rarm3.STL"
                                     ]
                                   }
                                 }
@@ -1538,7 +1538,7 @@ DEF GR1T2Simple Robot {
                                       }
                                       geometry DEF Rarm4 Mesh {
                                         url [
-                                          "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm4.STL"
+                                          "../urdf/GR1T2/meshes/Rarm4.STL"
                                         ]
                                       }
                                     }
@@ -1553,7 +1553,7 @@ DEF GR1T2Simple Robot {
                                           }
                                           geometry DEF Rarm5 Mesh {
                                             url [
-                                              "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm5.STL"
+                                              "../urdf/GR1T2/meshes/Rarm5.STL"
                                             ]
                                           }
                                         }
@@ -1568,7 +1568,7 @@ DEF GR1T2Simple Robot {
                                               }
                                               geometry DEF Rarm6 Mesh {
                                                 url [
-                                                  "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm6.STL"
+                                                  "../urdf/GR1T2/meshes/Rarm6.STL"
                                                 ]
                                               }
                                             }
@@ -1582,7 +1582,7 @@ DEF GR1T2Simple Robot {
                                                   }
                                                   geometry DEF Rarm7 Mesh {
                                                     url [
-                                                      "/home/fftai/Repository/wiki-grx-webots/robot-rcs-gr/webots/urdf/GR1T2/meshes/Rarm7.STL"
+                                                      "../urdf/GR1T2/meshes/Rarm7.STL"
                                                     ]
                                                   }
                                                 }
