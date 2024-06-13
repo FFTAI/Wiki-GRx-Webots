@@ -45,6 +45,19 @@ This repository provides an environment used to test the RL policy trained in NV
 
 The robot will be loaded and start walking in the simulation environment.
 
+### Different Webots World Files
+
+Besides the `gr1t1_simple.wbt` and `gr1t2_simple.wbt` files, we also provide the `gr1t1.wbt` and `gr1t2.wbt` files in the `robot-rcs-gr/webots/worlds` folder.
+
+Here are some differences between the `gr1t1.wbt` and `gr1t2.wbt` files and the `gr1t1_simple.wbt` and `gr1t2_simple.wbt` files:
+
+- `gr1t1.wbt` and `gr1t2.wbt` files:
+    - It is the full version of the GR1T1 and GR1T2 robot model.
+    - The joint positions are set to the 0.0 radian.
+- `gr1t1_simple.wbt` and `gr1t2_simple.wbt` files:
+    - It is the simplified version of the GR1T1 and GR1T2 robot model.
+    - The joint position at **elbow**, **hip_pitch**, **knee_pitch**, and **ankle_pitch** are set to the RL default position to have better performance.
+
 ### Model Conversion
 
 The URDF file can not be used directly in Webots. You need to convert the URDF file to a PROTO file.
