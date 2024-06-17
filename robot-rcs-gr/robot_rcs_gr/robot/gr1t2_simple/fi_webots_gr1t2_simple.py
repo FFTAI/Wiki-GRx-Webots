@@ -86,13 +86,20 @@ class WebotsGR1T2Simple(WebotsRobot):
         self.joint_pd_control_output = self.joint_default_position
 
         self.joint_pd_control_kp = numpy.array([
-            57, 43, 114, 114, 15.3,  # left leg(5)
-            57, 43, 114, 114, 15.3,  # right leg(5)
+            # left leg(5)
+            60 / (45 / 180 * numpy.pi),
+            45 / (45 / 180 * numpy.pi),
+            130 / (45 / 180 * numpy.pi),
+            130 / (45 / 180 * numpy.pi),
+            16 / (45 / 180 * numpy.pi),
+            # right leg(5)
+            60 / (45 / 180 * numpy.pi),
+            45 / (45 / 180 * numpy.pi),
+            130 / (45 / 180 * numpy.pi),
+            130 / (45 / 180 * numpy.pi),
+            16 / (45 / 180 * numpy.pi),
         ])
-        self.joint_pd_control_kd = numpy.array([
-            5.7, 4.3, 11.4, 11.4, 1.5,  # left leg(5)
-            5.7, 4.3, 11.4, 11.4, 1.5,  # right leg(5)
-        ])
+        self.joint_pd_control_kd = self.joint_pd_control_kp / 10 * 2.5
         self.joint_pd_control_max = numpy.array([
             60.0, 45.0, 130.0, 130.0, 16.0,  # left leg(5)
             60.0, 45.0, 130.0, 130.0, 16.0,  # right leg(5)
@@ -140,8 +147,8 @@ class WebotsGR1T2Simple(WebotsRobot):
             -0.09, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
             -0.79, -0.7, -1.75, -0.09, -1.05,  # left leg (5), no ankle roll
         ])
-        self.variable_nn_actor_output_clip_max = self.variable_nn_actor_output_clip_max + 60 / 180 * torch.pi / 3
-        self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 60 / 180 * torch.pi / 3
+        self.variable_nn_actor_output_clip_max = self.variable_nn_actor_output_clip_max + 45 / 180 * torch.pi / 3
+        self.variable_nn_actor_output_clip_min = self.variable_nn_actor_output_clip_min - 45 / 180 * torch.pi / 3
 
     def control_loop_algorithm(self):
         if self.decimation_count < 500:
