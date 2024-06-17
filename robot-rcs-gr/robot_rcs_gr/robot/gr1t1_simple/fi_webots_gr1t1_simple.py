@@ -111,7 +111,7 @@ class WebotsGR1T1Simple(WebotsRobot):
         try:
             self.model_file_path = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                "model_4000.pt"
+                "walk_model.pt"
             )
 
             model = torch.load(self.model_file_path, map_location=torch.device("cpu"))
